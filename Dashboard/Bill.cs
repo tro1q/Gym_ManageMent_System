@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Dashboard
 {
-    public partial class Coach : Form
+    public partial class Bill : Form
     {
-        public Coach()
+        public Bill()
         {
             InitializeComponent();
-        }
-
-        private void Coach_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
