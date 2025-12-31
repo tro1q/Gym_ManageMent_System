@@ -14,9 +14,11 @@ namespace Dashboard
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Receptionist());
+            Login obj = new Login();
+            Application.Run(obj);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Receptionist());
         }
     }
 }
