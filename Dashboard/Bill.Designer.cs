@@ -117,7 +117,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 36);
             this.button2.TabIndex = 21;
-            this.button2.Text = "Save";
+            this.button2.Text = "Confirm";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -127,7 +127,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 36);
             this.button3.TabIndex = 19;
-            this.button3.Text = "Delete";
+            this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // label2
