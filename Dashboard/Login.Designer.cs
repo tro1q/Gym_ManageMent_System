@@ -167,9 +167,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(451, 290);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 12;
-            this.label3.Text = "User Name";
+            this.label3.Text = "Password";
             // 
             // radioButton1
             // 
