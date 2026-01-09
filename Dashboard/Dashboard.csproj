@@ -156,5 +156,8 @@
   <ItemGroup>
     <None Include="Resources\members.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
