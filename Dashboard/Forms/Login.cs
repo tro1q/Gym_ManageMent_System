@@ -24,7 +24,10 @@ namespace Dashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Receptionist obj = new Receptionist();
+            //Receptionist obj = new Receptionist();
+            //obj.Show();
+            //this.Hide();
+            Coach obj = new Coach();
             obj.Show();
             this.Hide();
         }
