@@ -38,11 +38,12 @@ namespace Dashboard
 
         }
 
+       
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                if (ChNameTb.Text == "" || PhoneTb.Text == "" || ExpTb.Text == "" || PassTb.Text == "" || GenCb.SelectedIndex == -1)
+                if (ChNameTb.Text == "" || PhoneTb.Text == "" || ExpTb.Text == "" || PassTb.Text == "" || AddTb.Text =="" || GenCb.SelectedIndex == -1)
                 {
                     MessageBox.Show("Missing Information");
 
@@ -73,8 +74,139 @@ namespace Dashboard
 
         private void CoachList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ChNameTb.Text = CoachList.SelectedRows[0].Cells[1].Value.ToString();
+          
+        }
+
+        int key = 0;
+        private void CoachList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || CoachList.Rows[e.RowIndex].IsNewRow) //Empty row error handling
+                return;
+
+            if (e.RowIndex >= 0)
+            {
+                ChNameTb.Text = CoachList.Rows[e.RowIndex].Cells["CName"].Value.ToString();
+                GenCb.SelectedItem = CoachList.Rows[e.RowIndex].Cells["CGen"].Value.ToString();
+                DOBTb.Value = Convert.ToDateTime(CoachList.Rows[e.RowIndex].Cells["CDOB"].Value);
+                PhoneTb.Text = CoachList.Rows[e.RowIndex].Cells["CPhone"].Value.ToString();
+                ExpTb.Text = CoachList.Rows[e.RowIndex].Cells["CExperience"].Value.ToString();
+                AddTb.Text = CoachList.Rows[e.RowIndex].Cells["CAddress"].Value.ToString();
+                PassTb.Text = CoachList.Rows[e.RowIndex].Cells["CPass"].Value.ToString();
+            }
+
+            if (ChNameTb.Text == "")
+            {
+                key = 0;
+            }
+            else
+            {
+                key = Convert.ToInt32(CoachList.Rows[e.RowIndex].Cells["CId"].Value.ToString());
+               
+
+            }  
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (key == 0)
+                {
+                    MessageBox.Show("Select a Coach");
+
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this coach?",
+                                          "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        string CName = ChNameTb.Text;
+                        string Gender = GenCb.SelectedItem.ToString();
+                        string Phone = PhoneTb.Text;
+                        int experience = Convert.ToInt32(ExpTb.Text);
+                        string Add = AddTb.Text;
+                        string Password = PassTb.Text;
+                        string Query = "delete from CoachsTbl where CId = {0}";
+                        Query = string.Format(Query, key);
+                        Con.setData(Query);
+                        ShowCoach();
+                        
+                        ShowTempMessage("Coach Deleted Successfully");
+
+                        ClearFields();
+                    }
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+
+        }
+
+       
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (ChNameTb.Text == "" || PhoneTb.Text == "" || ExpTb.Text == "" || PassTb.Text == "" || AddTb.Text == "" || GenCb.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Missing Information");
+
+                }
+                else
+                {
+                    string CName = ChNameTb.Text;
+                    string Gender = GenCb.SelectedItem.ToString();
+                    string Phone = PhoneTb.Text;
+                    int experience = Convert.ToInt32(ExpTb.Text);
+                    string Add = AddTb.Text;
+                    string Password = PassTb.Text;
+                    string Query = "update CoachsTbl set CName = '{0}',CGen = '{1}',CDOB = '{2}',CPhone = '{3}',CExperience = '{4}',CAddress = '{5}',CPass = '{6}' where CID = {7}";
+                    Query = string.Format(Query, CName, Gender, DOBTb.Value.Date, Phone, experience, Add, Password,key);
+                    Con.setData(Query);
+                    ShowCoach();
+                    MessageBox.Show("Coach Updated Successfully");
+                    ShowTempMessage("Coach Updated!!");
+                    ClearFields();
+
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+
+
+     
+        }
+
+        private void ClearFields()
+        {
+            ChNameTb.Text = "";
+            GenCb.SelectedIndex = -1;
+            DOBTb.Value = DateTime.Now;
+            PhoneTb.Text = "";
+            ExpTb.Text = "";
+            AddTb.Text = "";
+            PassTb.Text = "";
+            key = 0;
+        }
+        private async void ShowTempMessage(string msg)
+        {
+            LabelMsg.Text = msg;
+            LabelMsg.Visible = true;
+
+            await Task.Delay(2000);
+
+            LabelMsg.Visible = false;
         }
     }
+
 }
 
