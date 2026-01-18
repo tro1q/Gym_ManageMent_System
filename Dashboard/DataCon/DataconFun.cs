@@ -46,12 +46,28 @@ namespace Dashboard.DataCon
             return cnt;
         }
 
+        //public DataTable GetData(string Query)
+        //{
+        //    dt = new DataTable();
+        //    sda = new SqlDataAdapter(Query, ConStr);
+        //    sda.Fill(dt);
+        //    return dt;
+        //}
         public DataTable GetData(string Query)
         {
             dt = new DataTable();
-            sda = new SqlDataAdapter(Query, ConStr);
+
+            if (Con.State == ConnectionState.Closed)
+            {
+                Con.Open();
+            }
+
+            sda = new SqlDataAdapter(Query, Con);
             sda.Fill(dt);
+
+            Con.Close();
             return dt;
         }
+
     }
 }

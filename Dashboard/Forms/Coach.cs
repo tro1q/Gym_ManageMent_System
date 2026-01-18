@@ -18,6 +18,7 @@ namespace Dashboard
         {
             InitializeComponent();
             Con = new DataconFun();
+            ShowCoach();
         }
 
         private void Coach_Load(object sender, EventArgs e)
@@ -27,6 +28,13 @@ namespace Dashboard
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void ShowCoach()
+        {
+            string Query = "select * from CoachsTbl";
+            CoachList.DataSource = Con.GetData(Query);
 
         }
 
@@ -50,6 +58,7 @@ namespace Dashboard
                     string Query = "insert into CoachsTbl values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')";
                     Query = string.Format(Query, CName, Gender, DOBTb.Value.Date, Phone, experience, Add, Password);
                     Con.setData(Query);
+                    ShowCoach();
                     MessageBox.Show("Coach Added Successfully");
                 }
 
@@ -60,6 +69,11 @@ namespace Dashboard
             }
                   
             
+        }
+
+        private void CoachList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ChNameTb.Text = CoachList.SelectedRows[0].Cells[1].Value.ToString();
         }
     }
 }

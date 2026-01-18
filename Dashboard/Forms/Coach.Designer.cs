@@ -64,6 +64,7 @@
             this.GenCb = new System.Windows.Forms.ComboBox();
             this.ChNameTb = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.CoachList = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -73,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.CoachsList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CoachList)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -331,9 +334,10 @@
             // 
             // CoachsList
             // 
+            this.CoachsList.Controls.Add(this.CoachList);
             this.CoachsList.Location = new System.Drawing.Point(221, 375);
             this.CoachsList.Name = "CoachsList";
-            this.CoachsList.Size = new System.Drawing.Size(697, 292);
+            this.CoachsList.Size = new System.Drawing.Size(790, 292);
             this.CoachsList.TabIndex = 38;
             // 
             // label15
@@ -359,7 +363,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(494, 330);
+            this.label13.Location = new System.Drawing.Point(508, 330);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(115, 26);
             this.label13.TabIndex = 22;
@@ -462,6 +466,20 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Manage Coach";
             // 
+            // CoachList
+            // 
+            this.CoachList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CoachList.BackgroundColor = System.Drawing.Color.SeaShell;
+            this.CoachList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CoachList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CoachList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CoachList.GridColor = System.Drawing.Color.Sienna;
+            this.CoachList.Location = new System.Drawing.Point(0, 0);
+            this.CoachList.Name = "CoachList";
+            this.CoachList.Size = new System.Drawing.Size(790, 292);
+            this.CoachList.TabIndex = 0;
+            this.CoachList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CoachList_CellContentClick);
+            // 
             // Coach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,6 +502,8 @@
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.CoachsList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CoachList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -526,5 +546,6 @@
         private System.Windows.Forms.TextBox ExpTb;
         private System.Windows.Forms.Panel CoachsList;
         private System.Windows.Forms.TextBox PhoneTb;
+        private System.Windows.Forms.DataGridView CoachList;
     }
 }
