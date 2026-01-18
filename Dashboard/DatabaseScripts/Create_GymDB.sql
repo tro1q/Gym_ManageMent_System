@@ -20,3 +20,15 @@ CREATE TABLE [dbo].[CoachsTbl]
     [CPass] NCHAR(10) NULL
 );
 GO
+
+-- Create MembershipsTbl if it does not exist
+IF OBJECT_ID('dbo.MembershipsTbl', 'U') IS NULL
+CREATE TABLE [dbo].[MembershipsTbl]
+(
+    [MShipid] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [MName] VARCHAR(50) NOT NULL, 
+    [MDuration] INT NOT NULL, 
+    [MGoal] VARCHAR(50) NOT NULL, 
+    [MCost] INT NOT NULL
+);
+GO
