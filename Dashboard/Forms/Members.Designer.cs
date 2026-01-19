@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Members));
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.EditBtn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -41,16 +41,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.CoachCb = new System.Windows.Forms.ComboBox();
+            this.MShipCb = new System.Windows.Forms.ComboBox();
+            this.StatusCb = new System.Windows.Forms.ComboBox();
+            this.JDateTb = new System.Windows.Forms.DateTimePicker();
+            this.GenCb = new System.Windows.Forms.ComboBox();
+            this.TimingCb = new System.Windows.Forms.ComboBox();
+            this.DOBTb = new System.Windows.Forms.DateTimePicker();
+            this.PhoneTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.MNameTb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -75,39 +75,39 @@
             this.label11.TabIndex = 51;
             this.label11.Text = "Members List";
             // 
-            // button3
+            // DeleteBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(705, 469);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 37);
-            this.button3.TabIndex = 50;
-            this.button3.Text = "delete";
-            this.button3.UseVisualStyleBackColor = false;
+            this.DeleteBtn.BackColor = System.Drawing.Color.Red;
+            this.DeleteBtn.ForeColor = System.Drawing.Color.Black;
+            this.DeleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("DeleteBtn.Image")));
+            this.DeleteBtn.Location = new System.Drawing.Point(705, 469);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(87, 37);
+            this.DeleteBtn.TabIndex = 50;
+            this.DeleteBtn.Text = "delete";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // SaveBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.Ivory;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(565, 469);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 37);
-            this.button2.TabIndex = 49;
-            this.button2.Text = "save";
-            this.button2.UseVisualStyleBackColor = false;
+            this.SaveBtn.BackColor = System.Drawing.Color.Ivory;
+            this.SaveBtn.Image = ((System.Drawing.Image)(resources.GetObject("SaveBtn.Image")));
+            this.SaveBtn.Location = new System.Drawing.Point(565, 469);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(86, 37);
+            this.SaveBtn.TabIndex = 49;
+            this.SaveBtn.Text = "save";
+            this.SaveBtn.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // EditBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(435, 469);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 37);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = false;
+            this.EditBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.EditBtn.Image = ((System.Drawing.Image)(resources.GetObject("EditBtn.Image")));
+            this.EditBtn.Location = new System.Drawing.Point(435, 469);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(90, 37);
+            this.EditBtn.TabIndex = 48;
+            this.EditBtn.Text = "Edit";
+            this.EditBtn.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -171,70 +171,70 @@
             this.label3.TabIndex = 41;
             this.label3.Text = "Date of Birth";
             // 
-            // comboBox5
+            // CoachCb
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(848, 375);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(157, 33);
-            this.comboBox5.TabIndex = 40;
+            this.CoachCb.FormattingEnabled = true;
+            this.CoachCb.Location = new System.Drawing.Point(848, 375);
+            this.CoachCb.Name = "CoachCb";
+            this.CoachCb.Size = new System.Drawing.Size(157, 33);
+            this.CoachCb.TabIndex = 40;
             // 
-            // comboBox4
+            // MShipCb
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(1012, 270);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(157, 33);
-            this.comboBox4.TabIndex = 39;
+            this.MShipCb.FormattingEnabled = true;
+            this.MShipCb.Location = new System.Drawing.Point(1012, 270);
+            this.MShipCb.Name = "MShipCb";
+            this.MShipCb.Size = new System.Drawing.Size(157, 33);
+            this.MShipCb.TabIndex = 39;
             // 
-            // comboBox3
+            // StatusCb
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(670, 375);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(157, 33);
-            this.comboBox3.TabIndex = 38;
+            this.StatusCb.FormattingEnabled = true;
+            this.StatusCb.Location = new System.Drawing.Point(670, 375);
+            this.StatusCb.Name = "StatusCb";
+            this.StatusCb.Size = new System.Drawing.Size(157, 33);
+            this.StatusCb.TabIndex = 38;
             // 
-            // dateTimePicker2
+            // JDateTb
             // 
-            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.Red;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(737, 275);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(243, 27);
-            this.dateTimePicker2.TabIndex = 37;
+            this.JDateTb.CalendarMonthBackground = System.Drawing.Color.Red;
+            this.JDateTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JDateTb.Location = new System.Drawing.Point(737, 275);
+            this.JDateTb.Name = "JDateTb";
+            this.JDateTb.Size = new System.Drawing.Size(243, 27);
+            this.JDateTb.TabIndex = 37;
             // 
-            // comboBox2
+            // GenCb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(274, 273);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(164, 33);
-            this.comboBox2.TabIndex = 36;
+            this.GenCb.FormattingEnabled = true;
+            this.GenCb.Location = new System.Drawing.Point(274, 273);
+            this.GenCb.Name = "GenCb";
+            this.GenCb.Size = new System.Drawing.Size(164, 33);
+            this.GenCb.TabIndex = 36;
             // 
-            // comboBox1
+            // TimingCb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(467, 378);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 33);
-            this.comboBox1.TabIndex = 35;
+            this.TimingCb.FormattingEnabled = true;
+            this.TimingCb.Location = new System.Drawing.Point(467, 378);
+            this.TimingCb.Name = "TimingCb";
+            this.TimingCb.Size = new System.Drawing.Size(157, 33);
+            this.TimingCb.TabIndex = 35;
             // 
-            // dateTimePicker1
+            // DOBTb
             // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(467, 275);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(252, 27);
-            this.dateTimePicker1.TabIndex = 34;
+            this.DOBTb.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.DOBTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DOBTb.Location = new System.Drawing.Point(467, 275);
+            this.DOBTb.Name = "DOBTb";
+            this.DOBTb.Size = new System.Drawing.Size(252, 27);
+            this.DOBTb.TabIndex = 34;
             // 
-            // textBox3
+            // PhoneTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(281, 381);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(136, 30);
-            this.textBox3.TabIndex = 33;
+            this.PhoneTb.Location = new System.Drawing.Point(281, 381);
+            this.PhoneTb.Name = "PhoneTb";
+            this.PhoneTb.Size = new System.Drawing.Size(136, 30);
+            this.PhoneTb.TabIndex = 33;
             // 
             // label4
             // 
@@ -245,12 +245,12 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Phone";
             // 
-            // textBox1
+            // MNameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 273);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 30);
-            this.textBox1.TabIndex = 31;
+            this.MNameTb.Location = new System.Drawing.Point(87, 273);
+            this.MNameTb.Name = "MNameTb";
+            this.MNameTb.Size = new System.Drawing.Size(142, 30);
+            this.MNameTb.TabIndex = 31;
             // 
             // label2
             // 
@@ -282,9 +282,9 @@
             this.ClientSize = new System.Drawing.Size(1257, 703);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.DeleteBtn);
+            this.Controls.Add(this.SaveBtn);
+            this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -292,16 +292,16 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.CoachCb);
+            this.Controls.Add(this.MShipCb);
+            this.Controls.Add(this.StatusCb);
+            this.Controls.Add(this.JDateTb);
+            this.Controls.Add(this.GenCb);
+            this.Controls.Add(this.TimingCb);
+            this.Controls.Add(this.DOBTb);
+            this.Controls.Add(this.PhoneTb);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.MNameTb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -317,9 +317,9 @@
 
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -327,16 +327,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox CoachCb;
+        private System.Windows.Forms.ComboBox MShipCb;
+        private System.Windows.Forms.ComboBox StatusCb;
+        private System.Windows.Forms.DateTimePicker JDateTb;
+        private System.Windows.Forms.ComboBox GenCb;
+        private System.Windows.Forms.ComboBox TimingCb;
+        private System.Windows.Forms.DateTimePicker DOBTb;
+        private System.Windows.Forms.TextBox PhoneTb;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox MNameTb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

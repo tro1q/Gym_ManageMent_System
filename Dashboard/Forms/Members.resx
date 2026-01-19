@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="DeleteBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAAnAAAAJwEqCZFPAAAPVElE
@@ -190,7 +190,7 @@
         iC1ZT4nNWSZv+bzYnLFObL475fP/D54WL0LejnpEAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="SaveBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAC+JJREFUeF7t
         W2lsFOcZdiBprkakaUlzNIFEqVoVFVG1CmoV9W9/VKr6p2qAQMJ9hQRISA+oDNiAuW9jsMGYy4wNvtbH
@@ -246,10 +246,10 @@
         4rUzhgycVf/ZnNzQSTxDsZHAbmosAtw4R7Vn/Yk9sf8f+y81Q0DU5ZwOgAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="EditBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAABLFJREFUeF7tmltv22QYx61phA8AF3wAhNAkLncSEkhcNBzUdiANwRVfYU13iyb1
+        vwAADr8BOAVTJAAABLFJREFUeF7tmltv22QYx61phA8AF3wAhNAkLncSEkhcNBzUdiANwRVfYU13iyb1
         kixstNkaGAOtaUsVVjV04mbOsW3abhOwbnXSZN1Kk5R2oEHZUQXKgx5PDu7z2vHrtvFJ/ku/m8V2+vvn
         9WN7siD48ePHjx8/fvz40U5ELL0STkk94VRxMCxKCVeAf2tK6sG/nfpw50Q2uzcsStGTorR5MlUEVyJK
         m+iALtTPMLI8PaBLQRfq1zS4dFz9y1NEadPU6YDnD3MQl4NO1FM3OEToAdwOOlFP3eAkpQdwO2GxmKCe
