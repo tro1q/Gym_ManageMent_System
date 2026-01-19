@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.GoalTb = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -43,21 +42,23 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.EditBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.MNameTb = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.MDurationTb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.CostTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.MShipList = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -67,22 +68,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MShipList)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel4
+            // GoalTb
             // 
-            this.panel4.Location = new System.Drawing.Point(221, 333);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(796, 323);
-            this.panel4.TabIndex = 38;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(622, 136);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(173, 26);
-            this.textBox4.TabIndex = 29;
+            this.GoalTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoalTb.Location = new System.Drawing.Point(622, 136);
+            this.GoalTb.Name = "GoalTb";
+            this.GoalTb.Size = new System.Drawing.Size(173, 26);
+            this.GoalTb.TabIndex = 29;
             // 
             // label13
             // 
@@ -95,15 +91,16 @@
             this.label13.TabIndex = 22;
             this.label13.Text = "Membership List";
             // 
-            // button2
+            // SaveBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.LimeGreen;
-            this.button2.Location = new System.Drawing.Point(499, 210);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 36);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = false;
+            this.SaveBtn.BackColor = System.Drawing.Color.LimeGreen;
+            this.SaveBtn.Location = new System.Drawing.Point(499, 210);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(109, 36);
+            this.SaveBtn.TabIndex = 21;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // pictureBox6
             // 
@@ -138,16 +135,16 @@
             this.pictureBox4.TabIndex = 25;
             this.pictureBox4.TabStop = false;
             // 
-            // button3
+            // DeleteBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(645, 210);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 36);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.DeleteBtn.BackColor = System.Drawing.Color.Crimson;
+            this.DeleteBtn.Location = new System.Drawing.Point(645, 210);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(109, 36);
+            this.DeleteBtn.TabIndex = 19;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.button3_Click);
             // 
             // label5
             // 
@@ -223,15 +220,15 @@
             this.label11.TabIndex = 4;
             this.label11.Text = "Reciptionists";
             // 
-            // button1
+            // EditBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.Location = new System.Drawing.Point(322, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 36);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = false;
+            this.EditBtn.BackColor = System.Drawing.Color.SteelBlue;
+            this.EditBtn.Location = new System.Drawing.Point(322, 210);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(109, 36);
+            this.EditBtn.TabIndex = 20;
+            this.EditBtn.Text = "Edit";
+            this.EditBtn.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -295,13 +292,13 @@
             this.label8.Size = new System.Drawing.Size(0, 20);
             this.label8.TabIndex = 0;
             // 
-            // textBox1
+            // MNameTb
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(221, 136);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 26);
-            this.textBox1.TabIndex = 2;
+            this.MNameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MNameTb.Location = new System.Drawing.Point(221, 136);
+            this.MNameTb.Name = "MNameTb";
+            this.MNameTb.Size = new System.Drawing.Size(173, 26);
+            this.MNameTb.TabIndex = 2;
             // 
             // panel2
             // 
@@ -333,13 +330,13 @@
             this.panel1.Size = new System.Drawing.Size(94, 693);
             this.panel1.TabIndex = 8;
             // 
-            // textBox5
+            // MDurationTb
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(429, 136);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(173, 26);
-            this.textBox5.TabIndex = 39;
+            this.MDurationTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MDurationTb.Location = new System.Drawing.Point(429, 136);
+            this.MDurationTb.Name = "MDurationTb";
+            this.MDurationTb.Size = new System.Drawing.Size(173, 26);
+            this.MDurationTb.TabIndex = 39;
             // 
             // label7
             // 
@@ -351,13 +348,13 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "Cost";
             // 
-            // textBox2
+            // CostTb
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(825, 136);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(173, 26);
-            this.textBox2.TabIndex = 25;
+            this.CostTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CostTb.Location = new System.Drawing.Point(825, 136);
+            this.CostTb.Name = "CostTb";
+            this.CostTb.Size = new System.Drawing.Size(173, 26);
+            this.CostTb.TabIndex = 25;
             // 
             // label3
             // 
@@ -372,19 +369,19 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.textBox5);
+            this.panel5.Controls.Add(this.MDurationTb);
             this.panel5.Controls.Add(this.panel4);
-            this.panel5.Controls.Add(this.textBox4);
+            this.panel5.Controls.Add(this.GoalTb);
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.CostTb);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label13);
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Controls.Add(this.button3);
+            this.panel5.Controls.Add(this.SaveBtn);
+            this.panel5.Controls.Add(this.EditBtn);
+            this.panel5.Controls.Add(this.DeleteBtn);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.MNameTb);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.panel2);
             this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -393,6 +390,27 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1033, 671);
             this.panel5.TabIndex = 9;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.MShipList);
+            this.panel4.Location = new System.Drawing.Point(221, 333);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(796, 323);
+            this.panel4.TabIndex = 38;
+            // 
+            // MShipList
+            // 
+            this.MShipList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MShipList.BackgroundColor = System.Drawing.Color.SeaShell;
+            this.MShipList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.MShipList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MShipList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MShipList.GridColor = System.Drawing.Color.Sienna;
+            this.MShipList.Location = new System.Drawing.Point(0, 0);
+            this.MShipList.Name = "MShipList";
+            this.MShipList.Size = new System.Drawing.Size(796, 323);
+            this.MShipList.TabIndex = 1;
             // 
             // Memberships
             // 
@@ -414,20 +432,20 @@
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MShipList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox GoalTb;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -435,20 +453,22 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox MNameTb;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox MDurationTb;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox CostTb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView MShipList;
     }
 }
