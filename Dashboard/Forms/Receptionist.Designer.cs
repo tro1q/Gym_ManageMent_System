@@ -30,23 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receptionist));
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.RecepAddTb = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.PasswordTb = new System.Windows.Forms.TextBox();
+            this.PhoneTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.EditBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.RecepDOB = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.abc = new System.Windows.Forms.TextBox();
+            this.GenCb = new System.Windows.Forms.ComboBox();
+            this.RecepNameTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -77,33 +77,33 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.textBox4);
+            this.panel5.Controls.Add(this.RecepAddTb);
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.PasswordTb);
+            this.panel5.Controls.Add(this.PhoneTb);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label13);
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Controls.Add(this.button3);
+            this.panel5.Controls.Add(this.SaveBtn);
+            this.panel5.Controls.Add(this.EditBtn);
+            this.panel5.Controls.Add(this.DeleteBtn);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.dateTimePicker1);
+            this.panel5.Controls.Add(this.RecepDOB);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.comboBox1);
-            this.panel5.Controls.Add(this.abc);
+            this.panel5.Controls.Add(this.GenCb);
+            this.panel5.Controls.Add(this.RecepNameTb);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.panel2);
             resources.ApplyResources(this.panel5, "panel5");
             this.panel5.ForeColor = System.Drawing.Color.Black;
             this.panel5.Name = "panel5";
             // 
-            // textBox4
+            // RecepAddTb
             // 
-            resources.ApplyResources(this.textBox4, "textBox4");
-            this.textBox4.Name = "textBox4";
+            resources.ApplyResources(this.RecepAddTb, "RecepAddTb");
+            this.RecepAddTb.Name = "RecepAddTb";
             // 
             // panel4
             // 
@@ -122,16 +122,16 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Name = "label4";
             // 
-            // textBox3
+            // PasswordTb
             // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
+            resources.ApplyResources(this.PasswordTb, "PasswordTb");
+            this.PasswordTb.Name = "PasswordTb";
             // 
-            // textBox2
+            // PhoneTb
             // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            resources.ApplyResources(this.PhoneTb, "PhoneTb");
+            this.PhoneTb.Name = "PhoneTb";
+            this.PhoneTb.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -145,27 +145,27 @@
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Name = "label13";
             // 
-            // button2
+            // SaveBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.LimeGreen;
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.SaveBtn.BackColor = System.Drawing.Color.LimeGreen;
+            resources.ApplyResources(this.SaveBtn, "SaveBtn");
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // EditBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.EditBtn.BackColor = System.Drawing.Color.SteelBlue;
+            resources.ApplyResources(this.EditBtn, "EditBtn");
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // DeleteBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.Crimson;
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = false;
+            this.DeleteBtn.BackColor = System.Drawing.Color.Crimson;
+            resources.ApplyResources(this.DeleteBtn, "DeleteBtn");
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -173,10 +173,10 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Name = "label6";
             // 
-            // dateTimePicker1
+            // RecepDOB
             // 
-            resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
-            this.dateTimePicker1.Name = "dateTimePicker1";
+            resources.ApplyResources(this.RecepDOB, "RecepDOB");
+            this.RecepDOB.Name = "RecepDOB";
             // 
             // label5
             // 
@@ -190,19 +190,19 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Name = "label2";
             // 
-            // comboBox1
+            // GenCb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items"),
-            resources.GetString("comboBox1.Items1")});
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.Name = "comboBox1";
+            this.GenCb.FormattingEnabled = true;
+            this.GenCb.Items.AddRange(new object[] {
+            resources.GetString("GenCb.Items"),
+            resources.GetString("GenCb.Items1")});
+            resources.ApplyResources(this.GenCb, "GenCb");
+            this.GenCb.Name = "GenCb";
             // 
-            // abc
+            // RecepNameTb
             // 
-            resources.ApplyResources(this.abc, "abc");
-            this.abc.Name = "abc";
+            resources.ApplyResources(this.RecepNameTb, "RecepNameTb");
+            this.RecepNameTb.Name = "RecepNameTb";
             // 
             // label1
             // 
@@ -348,15 +348,15 @@
 
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button EditBtn;
+        private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker RecepDOB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox abc;
+        private System.Windows.Forms.ComboBox GenCb;
+        private System.Windows.Forms.TextBox RecepNameTb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -373,13 +373,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox PasswordTb;
+        private System.Windows.Forms.TextBox PhoneTb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox RecepAddTb;
     }
 }
 
