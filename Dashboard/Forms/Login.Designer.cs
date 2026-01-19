@@ -140,6 +140,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(221, 26);
             this.textBox1.TabIndex = 3;
+          //  this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -167,9 +168,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(451, 290);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 12;
-            this.label3.Text = "User Name";
+            this.label3.Text = "Password";
             // 
             // radioButton1
             // 

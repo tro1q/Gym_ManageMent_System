@@ -38,6 +38,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=10.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.10.0.1\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,51 +54,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bill.cs">
+    <Compile Include="DataCon\DataconFun.cs" />
+    <Compile Include="Forms\Bill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bill.Designer.cs">
+    <Compile Include="Forms\Bill.Designer.cs">
       <DependentUpon>Bill.cs</DependentUpon>
     </Compile>
-    <Compile Include="Coach.cs">
+    <Compile Include="Forms\Coach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Coach.Designer.cs">
+    <Compile Include="Forms\Coach.Designer.cs">
       <DependentUpon>Coach.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Members.cs">
+    <Compile Include="Forms\Members.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Members.Designer.cs">
+    <Compile Include="Forms\Members.Designer.cs">
       <DependentUpon>Members.cs</DependentUpon>
     </Compile>
-    <Compile Include="Receptionist.cs">
+    <Compile Include="Forms\Memberships.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Receptionist.Designer.cs">
+    <Compile Include="Forms\Memberships.Designer.cs">
+      <DependentUpon>Memberships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receptionist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receptionist.Designer.cs">
       <DependentUpon>Receptionist.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bill.resx">
+    <EmbeddedResource Include="Forms\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Coach.resx">
+    <EmbeddedResource Include="Forms\Coach.resx">
       <DependentUpon>Coach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Members.resx">
+    <EmbeddedResource Include="Forms\Members.resx">
       <DependentUpon>Members.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Receptionist.resx">
+    <EmbeddedResource Include="Forms\Memberships.resx">
+      <DependentUpon>Memberships.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receptionist.resx">
       <DependentUpon>Receptionist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -107,6 +121,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -146,6 +161,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\members.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DatabaseScripts\Create_GymDB.sql" />
+    <Content Include="DataCon\.gitignore" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Dashboard
 {
-    public partial class Coach : Form
+    public partial class Memberships : Form
     {
-        public Coach()
+        public Memberships()
         {
             InitializeComponent();
         }
 
-        private void Coach_Load(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void SaveBtn_Click(object sender, EventArgs e)
         {
 
         }
