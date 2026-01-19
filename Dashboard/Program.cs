@@ -14,11 +14,14 @@ namespace Dashboard
         [STAThread]
         static void Main()
         {
-            Login obj = new Login();
-            Application.Run(obj);
+            //Login obj = new Login();
+            //Application.Run(obj);
+
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Receptionist());
+            Memberships obj2 = new Memberships();
+            Application.Run(obj2);
         }
     }
 }

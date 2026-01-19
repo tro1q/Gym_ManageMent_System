@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.PassTb = new System.Windows.Forms.TextBox();
             this.AddTb = new System.Windows.Forms.TextBox();
@@ -349,22 +352,40 @@
             // CoachsList
             // 
             this.CoachsList.Controls.Add(this.CoachList);
-            this.CoachsList.Location = new System.Drawing.Point(221, 375);
+            this.CoachsList.Location = new System.Drawing.Point(206, 375);
             this.CoachsList.Name = "CoachsList";
-            this.CoachsList.Size = new System.Drawing.Size(790, 292);
+            this.CoachsList.Size = new System.Drawing.Size(818, 292);
             this.CoachsList.TabIndex = 38;
             // 
             // CoachList
             // 
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
+            this.CoachList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.CoachList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CoachList.BackgroundColor = System.Drawing.Color.SeaShell;
             this.CoachList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CoachList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.CoachList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CoachList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CoachList.GridColor = System.Drawing.Color.Sienna;
             this.CoachList.Location = new System.Drawing.Point(0, 0);
             this.CoachList.Name = "CoachList";
-            this.CoachList.Size = new System.Drawing.Size(790, 292);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CoachList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.CoachList.Size = new System.Drawing.Size(818, 292);
             this.CoachList.TabIndex = 0;
             this.CoachList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CoachList_CellClick);
             this.CoachList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CoachList_CellContentClick);

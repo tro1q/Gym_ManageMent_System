@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GoalTb = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.DeleteBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -57,8 +59,10 @@
             this.CostTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.LabelMsg = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.MShipList = new System.Windows.Forms.DataGridView();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -134,17 +138,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 25;
             this.pictureBox4.TabStop = false;
-            // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.BackColor = System.Drawing.Color.Crimson;
-            this.DeleteBtn.Location = new System.Drawing.Point(645, 210);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(109, 36);
-            this.DeleteBtn.TabIndex = 19;
-            this.DeleteBtn.Text = "Delete";
-            this.DeleteBtn.UseVisualStyleBackColor = false;
-            this.DeleteBtn.Click += new System.EventHandler(this.button3_Click);
             // 
             // label5
             // 
@@ -229,6 +222,7 @@
             this.EditBtn.TabIndex = 20;
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // label2
             // 
@@ -369,6 +363,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.DeleteBtn);
+            this.panel5.Controls.Add(this.LabelMsg);
             this.panel5.Controls.Add(this.MDurationTb);
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.GoalTb);
@@ -378,7 +374,6 @@
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.SaveBtn);
             this.panel5.Controls.Add(this.EditBtn);
-            this.panel5.Controls.Add(this.DeleteBtn);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.MNameTb);
@@ -391,6 +386,18 @@
             this.panel5.Size = new System.Drawing.Size(1033, 671);
             this.panel5.TabIndex = 9;
             // 
+            // LabelMsg
+            // 
+            this.LabelMsg.BackColor = System.Drawing.Color.White;
+            this.LabelMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelMsg.ForeColor = System.Drawing.Color.Red;
+            this.LabelMsg.Location = new System.Drawing.Point(761, 27);
+            this.LabelMsg.Name = "LabelMsg";
+            this.LabelMsg.Size = new System.Drawing.Size(269, 36);
+            this.LabelMsg.TabIndex = 41;
+            this.LabelMsg.Text = "Deleted Successfully!!";
+            this.LabelMsg.Visible = false;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.MShipList);
@@ -401,16 +408,48 @@
             // 
             // MShipList
             // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.LimeGreen;
+            this.MShipList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.MShipList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.MShipList.BackgroundColor = System.Drawing.Color.SeaShell;
             this.MShipList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MShipList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.MShipList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MShipList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MShipList.GridColor = System.Drawing.Color.Sienna;
             this.MShipList.Location = new System.Drawing.Point(0, 0);
             this.MShipList.Name = "MShipList";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MShipList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.MShipList.Size = new System.Drawing.Size(796, 323);
             this.MShipList.TabIndex = 1;
+            this.MShipList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MShipList_CellContentClick);
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.BackColor = System.Drawing.Color.Chocolate;
+            this.DeleteBtn.Location = new System.Drawing.Point(662, 210);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(109, 36);
+            this.DeleteBtn.TabIndex = 42;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // Memberships
             // 
@@ -445,7 +484,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -470,5 +508,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView MShipList;
+        private System.Windows.Forms.Label LabelMsg;
+        private System.Windows.Forms.Button DeleteBtn;
     }
 }
