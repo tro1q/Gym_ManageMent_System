@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.PassTb = new System.Windows.Forms.TextBox();
             this.AddTb = new System.Windows.Forms.TextBox();
@@ -59,7 +59,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.ExpTb = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.SaveBtn = new System.Windows.Forms.Button();
             this.EditBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -69,6 +68,7 @@
             this.GenCb = new System.Windows.Forms.ComboBox();
             this.ChNameTb = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.SaveBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -359,32 +359,32 @@
             // 
             // CoachList
             // 
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
-            this.CoachList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Lime;
+            this.CoachList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.CoachList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CoachList.BackgroundColor = System.Drawing.Color.SeaShell;
             this.CoachList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CoachList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CoachList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.CoachList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CoachList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CoachList.GridColor = System.Drawing.Color.Sienna;
             this.CoachList.Location = new System.Drawing.Point(0, 0);
             this.CoachList.Name = "CoachList";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CoachList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CoachList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.CoachList.Size = new System.Drawing.Size(818, 292);
             this.CoachList.TabIndex = 0;
             this.CoachList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CoachList_CellClick);
@@ -418,17 +418,6 @@
             this.label13.Size = new System.Drawing.Size(115, 26);
             this.label13.TabIndex = 22;
             this.label13.Text = "Coach List";
-            // 
-            // SaveBtn
-            // 
-            this.SaveBtn.BackColor = System.Drawing.Color.LimeGreen;
-            this.SaveBtn.Location = new System.Drawing.Point(500, 277);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(109, 36);
-            this.SaveBtn.TabIndex = 21;
-            this.SaveBtn.Text = "Save";
-            this.SaveBtn.UseVisualStyleBackColor = false;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // EditBtn
             // 
@@ -518,6 +507,17 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Manage Coach";
             // 
+            // SaveBtn
+            // 
+            this.SaveBtn.BackColor = System.Drawing.Color.LimeGreen;
+            this.SaveBtn.Location = new System.Drawing.Point(500, 277);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(109, 36);
+            this.SaveBtn.TabIndex = 21;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // Coach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -527,6 +527,7 @@
             this.Controls.Add(this.panel5);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Coach";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Coach";
             this.Load += new System.EventHandler(this.Coach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -570,7 +571,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Label label6;
@@ -586,5 +586,6 @@
         private System.Windows.Forms.TextBox PhoneTb;
         private System.Windows.Forms.DataGridView CoachList;
         private System.Windows.Forms.Label LabelMsg;
+        private System.Windows.Forms.Button SaveBtn;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dashboard.DataCon;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,24 +13,111 @@ namespace Dashboard
 {
     public partial class Receptionist : Form
     {
+        DataconFun Con;
         public Receptionist()
         {
             InitializeComponent();
+            Con = new DataconFun();
+            ShowReceptionist();
         }
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ShowReceptionist()
+        {
+            string Query = "select * from ReceptionistTbl";
+            RecepList.DataSource = Con.GetData(Query);
+
+        }
+
+
+        private void EditBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RecepNameTb.Text == "" || RecepAddTb.Text == "" || PhoneTb.Text == "" || GenCb.SelectedIndex == -1 || PasswordTb.Text == "" )
+                {
+                    MessageBox.Show("Missing Information");
+
+                }
+                else
+                {
+                  string RName = RecepNameTb.Text;
+                    string Gender = GenCb.SelectedItem.ToString();
+                    string Phone = PhoneTb.Text;
+                    string Add = RecepAddTb.Text;
+                    string Password = PasswordTb.Text;
+                    string dob = RecepDOBTb.Value.ToString("yyyy-MM-dd");
+
+                    string Query = "insert into ReceptionistTbl values('{0}','{1}','{2}','{3}','{4}','{5}')";
+                    Query = string.Format(Query, RName, Gender, dob, Add, Phone, Password);
+                    Con.setData(Query);
+                    ShowReceptionist();
+                    MessageBox.Show("Coach Added Successfully");
+                    ClearFields();
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void ClearFields()
+        {
+            RecepNameTb.Text = "";
+            GenCb.SelectedIndex = -1;
+            PhoneTb.Text = "";
+            RecepAddTb.Text = "";
+            PasswordTb.Text = "";
+        }
+
+        int key = 0;
+        private void RecepList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || RecepList.Rows[e.RowIndex].IsNewRow) //Empty row error handling
+                return;
+
+            if (e.RowIndex >= 0)
+            {
+              RecepNameTb.Text = RecepList.Rows[e.RowIndex].Cells["RecepName"].Value.ToString();
+                GenCb.SelectedItem = RecepList.Rows[e.RowIndex].Cells["RecepGen"].Value.ToString();
+                RecepDOBTb.Text = RecepList.Rows[e.RowIndex].Cells["RecepDOB"].Value.ToString();
+                RecepAddTb.Text = RecepList.Rows[e.RowIndex].Cells["RecepAdd"].Value.ToString();
+                PhoneTb.Text = RecepList.Rows[e.RowIndex].Cells["RecepPhone"].Value.ToString();
+                PasswordTb.Text = RecepList.Rows[e.RowIndex].Cells["RecepPass"].Value.ToString();
+            }
+
+            if (RecepNameTb.Text == "")
+            {
+                key = 0;
+            }
+            else
+            {
+                key = Convert.ToInt32(RecepList.Rows[e.RowIndex].Cells["ReceptId"].Value.ToString());
+
+
+            }
         }
     }
 }

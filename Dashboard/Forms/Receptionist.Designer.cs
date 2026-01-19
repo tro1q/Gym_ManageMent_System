@@ -29,20 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receptionist));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.RecepAddTb = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.RecepList = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.PasswordTb = new System.Windows.Forms.TextBox();
             this.PhoneTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.SaveBtn = new System.Windows.Forms.Button();
             this.EditBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.RecepDOB = new System.Windows.Forms.DateTimePicker();
+            this.RecepDOBTb = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.GenCb = new System.Windows.Forms.ComboBox();
@@ -64,6 +68,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RecepList)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -77,6 +83,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.SaveBtn);
             this.panel5.Controls.Add(this.RecepAddTb);
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.label7);
@@ -85,11 +92,10 @@
             this.panel5.Controls.Add(this.PhoneTb);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label13);
-            this.panel5.Controls.Add(this.SaveBtn);
             this.panel5.Controls.Add(this.EditBtn);
             this.panel5.Controls.Add(this.DeleteBtn);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.RecepDOB);
+            this.panel5.Controls.Add(this.RecepDOBTb);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.GenCb);
@@ -100,6 +106,14 @@
             this.panel5.ForeColor = System.Drawing.Color.Black;
             this.panel5.Name = "panel5";
             // 
+            // SaveBtn
+            // 
+            this.SaveBtn.BackColor = System.Drawing.Color.LimeGreen;
+            resources.ApplyResources(this.SaveBtn, "SaveBtn");
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // RecepAddTb
             // 
             resources.ApplyResources(this.RecepAddTb, "RecepAddTb");
@@ -107,8 +121,38 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.RecepList);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
+            // 
+            // RecepList
+            // 
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
+            this.RecepList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.RecepList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.RecepList.BackgroundColor = System.Drawing.Color.SeaShell;
+            this.RecepList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RecepList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.RecepList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.RecepList, "RecepList");
+            this.RecepList.GridColor = System.Drawing.Color.Sienna;
+            this.RecepList.Name = "RecepList";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RecepList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.RecepList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RecepList_CellContentClick);
             // 
             // label7
             // 
@@ -145,20 +189,13 @@
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Name = "label13";
             // 
-            // SaveBtn
-            // 
-            this.SaveBtn.BackColor = System.Drawing.Color.LimeGreen;
-            resources.ApplyResources(this.SaveBtn, "SaveBtn");
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.UseVisualStyleBackColor = false;
-            this.SaveBtn.Click += new System.EventHandler(this.button2_Click);
-            // 
             // EditBtn
             // 
             this.EditBtn.BackColor = System.Drawing.Color.SteelBlue;
             resources.ApplyResources(this.EditBtn, "EditBtn");
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -166,6 +203,7 @@
             resources.ApplyResources(this.DeleteBtn, "DeleteBtn");
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // label6
             // 
@@ -173,10 +211,10 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Name = "label6";
             // 
-            // RecepDOB
+            // RecepDOBTb
             // 
-            resources.ApplyResources(this.RecepDOB, "RecepDOB");
-            this.RecepDOB.Name = "RecepDOB";
+            resources.ApplyResources(this.RecepDOBTb, "RecepDOBTb");
+            this.RecepDOBTb.Name = "RecepDOBTb";
             // 
             // label5
             // 
@@ -331,6 +369,8 @@
             this.Name = "Receptionist";
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RecepList)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -348,11 +388,10 @@
 
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker RecepDOB;
+        private System.Windows.Forms.DateTimePicker RecepDOBTb;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox GenCb;
@@ -380,6 +419,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox RecepAddTb;
+        private System.Windows.Forms.DataGridView RecepList;
+        private System.Windows.Forms.Button SaveBtn;
     }
 }
 

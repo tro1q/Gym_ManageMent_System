@@ -20,8 +20,11 @@ namespace Dashboard
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Receptionist());
-            Memberships obj2 = new Memberships();
-            Application.Run(obj2);
+            //Memberships obj2 = new Memberships();
+            //Application.Run(obj2);
+
+            Receptionist obj3 = new Receptionist();
+            Application.Run(obj3);
         }
     }
 }

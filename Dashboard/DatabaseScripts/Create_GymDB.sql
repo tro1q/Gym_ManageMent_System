@@ -32,3 +32,19 @@ CREATE TABLE [dbo].[MembershipsTbl]
     [MCost] INT NOT NULL
 );
 GO
+
+--Receptionist Table
+IF OBJECT_ID('dbo.ReceptionistTbl', 'U') IS NULL
+BEGIN
+    CREATE TABLE [dbo].[ReceptionistTbl]
+    (
+        [ReceptId] INT IDENTITY(1,1) PRIMARY KEY,
+        [RecepName] VARCHAR(50) NOT NULL,
+        [RecepGen] VARCHAR(50) NOT NULL,
+        [RecepDOB] DATE NOT NULL,
+        [RecepAdd] VARCHAR(50) NOT NULL,
+        [RecepPhone] VARCHAR(50) NOT NULL,
+        [RecepPass] VARCHAR(50) NOT NULL
+    );
+END
+GO
