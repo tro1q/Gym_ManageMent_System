@@ -210,12 +210,17 @@ namespace Dashboard
 
         private void MemberLbl_Click(object sender, EventArgs e)
         {
-            //Members Obj = new Members();
-            //Obj.Show();
-            //this.Hide();
+            Members Obj = new Members();
+            Obj.Show();
+            this.Hide();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CoachLbl_Click(object sender, EventArgs e)
         {
 
         }
