@@ -173,5 +173,40 @@ namespace Dashboard
 
             LabelMsg.Visible = false;
         }
+
+        private void CoachLbl_Click(object sender, EventArgs e)
+        {
+            Coach coach = new Coach();
+            coach.Show();
+            this.Hide();
+        }
+
+        private void MemberLbl_Click(object sender, EventArgs e)
+        {
+            Members members = new Members();
+            members.Show();
+            this.Hide();
+        }
+
+        private void MemberShipLbl_Click(object sender, EventArgs e)
+        {
+            Memberships memberships = new Memberships();
+            memberships.Show();
+            this.Hide();
+        }
+
+        private void RecepLbl_Click(object sender, EventArgs e)
+        {
+            Receptionist receptionist = new Receptionist();
+            receptionist.Show();
+            this.Hide();
+        }
+
+        private void BillLbl_Click(object sender, EventArgs e)
+        {
+            Bill bill = new Bill();
+            bill.Show();
+            this.Hide();
+        }
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receptionist));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel5 = new System.Windows.Forms.Panel();
             this.LabelMsg = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -56,40 +56,30 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.MemberPanel = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.MemberLbl = new System.Windows.Forms.Label();
-            this.MembershipPanel = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.RecepPanel = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.BillPanel = new System.Windows.Forms.Panel();
+            this.BillLbl = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.MemberShipLbl = new System.Windows.Forms.Label();
+            this.RecepLbl = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.MemberLbl = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.CoachLabel = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RecepList)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.MemberPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.MembershipPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.RecepPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.BillPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -147,31 +137,31 @@
             // 
             // RecepList
             // 
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Lime;
-            this.RecepList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Lime;
+            this.RecepList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.RecepList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.RecepList.BackgroundColor = System.Drawing.Color.SeaShell;
             this.RecepList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RecepList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RecepList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.RecepList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.RecepList, "RecepList");
             this.RecepList.GridColor = System.Drawing.Color.Sienna;
             this.RecepList.Name = "RecepList";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RecepList.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RecepList.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.RecepList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RecepList_CellContentClick);
             // 
             // label7
@@ -272,13 +262,19 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Teal;
-            this.panel2.Controls.Add(this.BillPanel);
-            this.panel2.Controls.Add(this.RecepPanel);
-            this.panel2.Controls.Add(this.MembershipPanel);
-            this.panel2.Controls.Add(this.MemberPanel);
-            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.BillLbl);
+            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(this.MemberShipLbl);
+            this.panel2.Controls.Add(this.RecepLbl);
+            this.panel2.Controls.Add(this.pictureBox6);
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.MemberLbl);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.CoachLabel);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.label8);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.panel2.Name = "panel2";
@@ -297,110 +293,18 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Name = "label8";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // panel6
+            // BillLbl
             // 
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Controls.Add(this.label14);
-            resources.ApplyResources(this.panel6, "panel6");
-            this.panel6.Name = "panel6";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            // 
-            // label14
-            // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Name = "label14";
-            // 
-            // MemberPanel
-            // 
-            this.MemberPanel.Controls.Add(this.pictureBox3);
-            this.MemberPanel.Controls.Add(this.MemberLbl);
-            resources.ApplyResources(this.MemberPanel, "MemberPanel");
-            this.MemberPanel.Name = "MemberPanel";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            // 
-            // MemberLbl
-            // 
-            resources.ApplyResources(this.MemberLbl, "MemberLbl");
-            this.MemberLbl.ForeColor = System.Drawing.Color.Black;
-            this.MemberLbl.Name = "MemberLbl";
-            // 
-            // MembershipPanel
-            // 
-            this.MembershipPanel.Controls.Add(this.pictureBox4);
-            this.MembershipPanel.Controls.Add(this.label10);
-            resources.ApplyResources(this.MembershipPanel, "MembershipPanel");
-            this.MembershipPanel.Name = "MembershipPanel";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.TabStop = false;
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Name = "label10";
-            // 
-            // RecepPanel
-            // 
-            this.RecepPanel.Controls.Add(this.panel10);
-            this.RecepPanel.Controls.Add(this.pictureBox6);
-            this.RecepPanel.Controls.Add(this.label11);
-            resources.ApplyResources(this.RecepPanel, "RecepPanel");
-            this.RecepPanel.Name = "RecepPanel";
-            // 
-            // panel10
-            // 
-            resources.ApplyResources(this.panel10, "panel10");
-            this.panel10.Name = "panel10";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
-            resources.ApplyResources(this.pictureBox6, "pictureBox6");
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.TabStop = false;
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Name = "label11";
-            // 
-            // BillPanel
-            // 
-            this.BillPanel.Controls.Add(this.pictureBox5);
-            this.BillPanel.Controls.Add(this.label12);
-            resources.ApplyResources(this.BillPanel, "BillPanel");
-            this.BillPanel.Name = "BillPanel";
+            resources.ApplyResources(this.BillLbl, "BillLbl");
+            this.BillLbl.ForeColor = System.Drawing.Color.Black;
+            this.BillLbl.Name = "BillLbl";
+            this.BillLbl.Click += new System.EventHandler(this.BillLbl_Click);
             // 
             // pictureBox5
             // 
@@ -409,11 +313,73 @@
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.TabStop = false;
             // 
-            // label12
+            // MemberShipLbl
             // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Name = "label12";
+            resources.ApplyResources(this.MemberShipLbl, "MemberShipLbl");
+            this.MemberShipLbl.ForeColor = System.Drawing.Color.Black;
+            this.MemberShipLbl.Name = "MemberShipLbl";
+            this.MemberShipLbl.Click += new System.EventHandler(this.MemberShipLbl_Click);
+            // 
+            // RecepLbl
+            // 
+            resources.ApplyResources(this.RecepLbl, "RecepLbl");
+            this.RecepLbl.ForeColor = System.Drawing.Color.Black;
+            this.RecepLbl.Name = "RecepLbl";
+            this.RecepLbl.Click += new System.EventHandler(this.RecepLbl_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
+            resources.ApplyResources(this.pictureBox6, "pictureBox6");
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
+            // 
+            // MemberLbl
+            // 
+            resources.ApplyResources(this.MemberLbl, "MemberLbl");
+            this.MemberLbl.ForeColor = System.Drawing.Color.Black;
+            this.MemberLbl.Name = "MemberLbl";
+            this.MemberLbl.Click += new System.EventHandler(this.MemberLbl_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
+            // CoachLabel
+            // 
+            resources.ApplyResources(this.CoachLabel, "CoachLabel");
+            this.CoachLabel.ForeColor = System.Drawing.Color.Black;
+            this.CoachLabel.Name = "CoachLabel";
+            this.CoachLabel.Click += new System.EventHandler(this.CoachLabel_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Name = "label9";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Name = "label14";
             // 
             // Receptionist
             // 
@@ -431,21 +397,11 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.MemberPanel.ResumeLayout(false);
-            this.MemberPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.MembershipPanel.ResumeLayout(false);
-            this.MembershipPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.RecepPanel.ResumeLayout(false);
-            this.RecepPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.BillPanel.ResumeLayout(false);
-            this.BillPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,7 +421,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox PasswordTb;
@@ -478,22 +433,18 @@
         private System.Windows.Forms.DataGridView RecepList;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Label LabelMsg;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel MemberPanel;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label MemberLbl;
-        private System.Windows.Forms.Panel MembershipPanel;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel RecepPanel;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel BillPanel;
+        private System.Windows.Forms.Label BillLbl;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label MemberShipLbl;
+        private System.Windows.Forms.Label RecepLbl;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label MemberLbl;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label CoachLabel;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label14;
     }
 }
 

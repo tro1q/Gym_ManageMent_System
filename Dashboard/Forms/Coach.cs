@@ -215,14 +215,52 @@ namespace Dashboard
             this.Hide();
         }
 
+
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+      
 
-        private void CoachLbl_Click(object sender, EventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void CoachLabel_Click(object sender, EventArgs e)
+        {
+            Coach Obj = new Coach();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void MemberLbl_Click_1(object sender, EventArgs e)
+        {
+            Members Obj = new Members();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void MemberShipLbl_Click(object sender, EventArgs e)
+        {
+            Memberships Obj = new Memberships();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void RecepLbl_Click(object sender, EventArgs e)
+        {
+            Receptionist Obj = new Receptionist();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void BillLbl_Click(object sender, EventArgs e)
+        {
+            Bill Obj = new Bill();
+            Obj.Show();
+            this.Hide();
         }
     }
 

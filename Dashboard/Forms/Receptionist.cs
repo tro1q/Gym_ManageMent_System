@@ -186,5 +186,41 @@ namespace Dashboard
 
             }
         }
+      
+
+        private void CoachLabel_Click(object sender, EventArgs e)
+        {
+           Coach Obj = new Coach();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void MemberLbl_Click(object sender, EventArgs e)
+        {
+            Members obj = new Members();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void MemberShipLbl_Click(object sender, EventArgs e)
+        {
+            Memberships obj = new Memberships();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void RecepLbl_Click(object sender, EventArgs e)
+        {
+            Receptionist obj = new Receptionist();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void BillLbl_Click(object sender, EventArgs e)
+        {
+            Bill obj = new Bill();
+            obj.Show();
+            this.Hide();
+        }
     }
 }
