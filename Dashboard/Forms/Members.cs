@@ -16,5 +16,10 @@ namespace Dashboard
         {
             InitializeComponent();
         }
+
+        private void Members_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
