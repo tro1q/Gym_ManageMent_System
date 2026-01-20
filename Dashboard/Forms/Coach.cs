@@ -207,6 +207,13 @@ namespace Dashboard
 
             LabelMsg.Visible = false;
         }
+
+        private void MemberLbl_Click(object sender, EventArgs e)
+        {
+            //Members Obj = new Members();
+            //Obj.Show();
+            //this.Hide();
+        }
     }
 
 }

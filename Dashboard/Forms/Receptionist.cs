@@ -42,12 +42,69 @@ namespace Dashboard
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (RecepNameTb.Text == "" || RecepAddTb.Text == "" || PhoneTb.Text == "" || GenCb.SelectedIndex == -1 || PasswordTb.Text == "")
+                {
+                    MessageBox.Show("Missing Information");
 
+                }
+                else
+                {
+                    string RName = RecepNameTb.Text;
+                    string Gender = GenCb.SelectedItem.ToString();
+                    string Phone = PhoneTb.Text;
+                    string Add = RecepAddTb.Text;
+                    string Password = PasswordTb.Text;
+                    string dob = RecepDOBTb.Value.ToString("yyyy-MM-dd");
+
+                    string Query = "update ReceptionistTbl set RecepName = '{0}',RecepGen = '{1}',RecepDOB ='{2}',RecepAdd ='{3}',RecepPhone = '{4}',RecepPass = '{5}' where ReceptId = {6}";
+                    Query = string.Format(Query, RName, Gender, dob, Add, Phone, Password,key);
+                    Con.setData(Query);
+                    ShowReceptionist();
+                    MessageBox.Show("Receptionist Updated !!");
+                    ClearFields();
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (key == 0)
+                {
+                    MessageBox.Show("Select a Receptionist");
 
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this Receptionist?",
+                                          "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        
+                        string Query = "delete from ReceptionistTbl where ReceptId = {0}";
+                        Query = string.Format(Query, key);
+                        Con.setData(Query);
+                        ShowReceptionist();
+
+                        ShowTempMessage("Receptionist Deleted Successfully");
+
+                        ClearFields();
+                    }
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -90,6 +147,16 @@ namespace Dashboard
             PhoneTb.Text = "";
             RecepAddTb.Text = "";
             PasswordTb.Text = "";
+        }
+
+        private async void ShowTempMessage(string msg)
+        {
+            LabelMsg.Text = msg;
+            LabelMsg.Visible = true;
+
+            await Task.Delay(2000);
+
+            LabelMsg.Visible = false;
         }
 
         int key = 0;

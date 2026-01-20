@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receptionist));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receptionist));
             this.panel5 = new System.Windows.Forms.Panel();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.RecepAddTb = new System.Windows.Forms.TextBox();
@@ -67,6 +67,7 @@
             this.Coach = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LabelMsg = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RecepList)).BeginInit();
@@ -83,6 +84,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.LabelMsg);
             this.panel5.Controls.Add(this.SaveBtn);
             this.panel5.Controls.Add(this.RecepAddTb);
             this.panel5.Controls.Add(this.panel4);
@@ -359,6 +361,13 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // LabelMsg
+            // 
+            this.LabelMsg.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.LabelMsg, "LabelMsg");
+            this.LabelMsg.ForeColor = System.Drawing.Color.Red;
+            this.LabelMsg.Name = "LabelMsg";
+            // 
             // Receptionist
             // 
             resources.ApplyResources(this, "$this");
@@ -421,6 +430,7 @@
         private System.Windows.Forms.TextBox RecepAddTb;
         private System.Windows.Forms.DataGridView RecepList;
         private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Label LabelMsg;
     }
 }
 

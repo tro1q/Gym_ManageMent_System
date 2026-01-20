@@ -48,7 +48,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.MemberLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -59,6 +59,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.ExpTb = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.EditBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@
             this.GenCb = new System.Windows.Forms.ComboBox();
             this.ChNameTb = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.SaveBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -193,7 +193,7 @@
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.MemberLbl);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -266,16 +266,17 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "Membership";
             // 
-            // label9
+            // MemberLbl
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(52, 222);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 24);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Members";
+            this.MemberLbl.AutoSize = true;
+            this.MemberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemberLbl.ForeColor = System.Drawing.Color.Black;
+            this.MemberLbl.Location = new System.Drawing.Point(52, 224);
+            this.MemberLbl.Name = "MemberLbl";
+            this.MemberLbl.Size = new System.Drawing.Size(90, 24);
+            this.MemberLbl.TabIndex = 2;
+            this.MemberLbl.Text = "Members";
+            this.MemberLbl.Click += new System.EventHandler(this.MemberLbl_Click);
             // 
             // label1
             // 
@@ -419,6 +420,17 @@
             this.label13.TabIndex = 22;
             this.label13.Text = "Coach List";
             // 
+            // SaveBtn
+            // 
+            this.SaveBtn.BackColor = System.Drawing.Color.LimeGreen;
+            this.SaveBtn.Location = new System.Drawing.Point(500, 277);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(109, 36);
+            this.SaveBtn.TabIndex = 21;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // EditBtn
             // 
             this.EditBtn.BackColor = System.Drawing.Color.SteelBlue;
@@ -507,17 +519,6 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Manage Coach";
             // 
-            // SaveBtn
-            // 
-            this.SaveBtn.BackColor = System.Drawing.Color.LimeGreen;
-            this.SaveBtn.Location = new System.Drawing.Point(500, 277);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(109, 36);
-            this.SaveBtn.TabIndex = 21;
-            this.SaveBtn.Text = "Save";
-            this.SaveBtn.UseVisualStyleBackColor = false;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
-            // 
             // Coach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,7 +567,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label MemberLbl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel5;
