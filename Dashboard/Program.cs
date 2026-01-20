@@ -14,8 +14,8 @@ namespace Dashboard
         [STAThread]
         static void Main()
         {
-            Login obj = new Login();
-            Application.Run(obj);
+            //Login obj = new Login();
+            //Application.Run(obj);
 
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
@@ -25,6 +25,9 @@ namespace Dashboard
 
             //Receptionist obj3 = new Receptionist();
             //Application.Run(obj3);
+
+            Members obj = new Members();
+            Application.Run(obj);
         }
     }
 }

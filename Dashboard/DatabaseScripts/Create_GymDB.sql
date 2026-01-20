@@ -48,3 +48,30 @@ BEGIN
     );
 END
 GO
+
+/* =========================
+   Members Table
+   ========================= */
+IF OBJECT_ID('dbo.MembersTbl', 'U') IS NULL
+BEGIN
+    CREATE TABLE [dbo].[MembersTbl]
+    (
+        [MId] INT IDENTITY(1,1) PRIMARY KEY,
+        [MName] VARCHAR(50) NOT NULL,
+        [MGen] VARCHAR(10) NOT NULL,
+        [MDOB] DATE NOT NULL,
+        [MJDate] DATE NOT NULL,
+        [MMembership] INT NOT NULL,
+        [MCoach] INT NOT NULL,
+        [MPhone] VARCHAR(10) NOT NULL,
+        [MTiming] VARCHAR(10) NOT NULL,
+        [MStatus] VARCHAR(10) NOT NULL,
+
+        CONSTRAINT FK1 
+            FOREIGN KEY (MMembership) REFERENCES MembershipsTbl(MShipid),
+
+        CONSTRAINT FK2 
+            FOREIGN KEY (MCoach) REFERENCES CoachsTbl(CId)
+    );
+END
+GO

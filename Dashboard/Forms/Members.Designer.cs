@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelMsg = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -113,6 +113,7 @@
             this.SaveBtn.TabIndex = 41;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // panel4
             // 
@@ -120,40 +121,40 @@
             this.panel4.Location = new System.Drawing.Point(224, 483);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1031, 441);
+            this.panel4.Size = new System.Drawing.Size(1133, 441);
             this.panel4.TabIndex = 39;
             // 
             // MembersList
             // 
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
-            this.MembersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Lime;
+            this.MembersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.MembersList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.MembersList.BackgroundColor = System.Drawing.Color.SeaShell;
             this.MembersList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MembersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MembersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.MembersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MembersList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MembersList.GridColor = System.Drawing.Color.Sienna;
             this.MembersList.Location = new System.Drawing.Point(0, 0);
             this.MembersList.Margin = new System.Windows.Forms.Padding(4);
             this.MembersList.Name = "MembersList";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MembersList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MembersList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.MembersList.RowHeadersWidth = 51;
-            this.MembersList.Size = new System.Drawing.Size(1031, 441);
+            this.MembersList.Size = new System.Drawing.Size(1133, 441);
             this.MembersList.TabIndex = 1;
             // 
             // label7
@@ -391,10 +392,10 @@
             this.panel5.Controls.Add(this.panel2);
             this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.panel5.ForeColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(2, -58);
+            this.panel5.Location = new System.Drawing.Point(3, -58);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1377, 839);
+            this.panel5.Size = new System.Drawing.Size(1353, 839);
             this.panel5.TabIndex = 7;
             // 
             // BillLbl
@@ -582,9 +583,6 @@
             // TimingCb
             // 
             this.TimingCb.FormattingEnabled = true;
-            this.TimingCb.Items.AddRange(new object[] {
-            "Male",
-            "Femal"});
             this.TimingCb.Location = new System.Drawing.Point(466, 283);
             this.TimingCb.Margin = new System.Windows.Forms.Padding(4);
             this.TimingCb.Name = "TimingCb";
@@ -594,9 +592,6 @@
             // StatusCb
             // 
             this.StatusCb.FormattingEnabled = true;
-            this.StatusCb.Items.AddRange(new object[] {
-            "Male",
-            "Femal"});
             this.StatusCb.Location = new System.Drawing.Point(694, 283);
             this.StatusCb.Margin = new System.Windows.Forms.Padding(4);
             this.StatusCb.Name = "StatusCb";
@@ -606,9 +601,6 @@
             // CoachCb
             // 
             this.CoachCb.FormattingEnabled = true;
-            this.CoachCb.Items.AddRange(new object[] {
-            "Male",
-            "Femal"});
             this.CoachCb.Location = new System.Drawing.Point(910, 281);
             this.CoachCb.Margin = new System.Windows.Forms.Padding(4);
             this.CoachCb.Name = "CoachCb";
@@ -638,9 +630,6 @@
             // MShipCb
             // 
             this.MShipCb.FormattingEnabled = true;
-            this.MShipCb.Items.AddRange(new object[] {
-            "Male",
-            "Femal"});
             this.MShipCb.Location = new System.Drawing.Point(1132, 165);
             this.MShipCb.Margin = new System.Windows.Forms.Padding(4);
             this.MShipCb.Name = "MShipCb";
@@ -664,7 +653,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1257, 879);
+            this.ClientSize = new System.Drawing.Size(1357, 879);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

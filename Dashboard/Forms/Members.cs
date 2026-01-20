@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dashboard.DataCon;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,20 @@ namespace Dashboard
 {
     public partial class Members : Form
     {
+        DataconFun Con;
         public Members()
         {
             InitializeComponent();
+            Con = new DataconFun();
+            ShowMembers();
+            GetCoaches();
+            GetMships();
+        }
+
+        private void ShowMembers()
+        {
+            string Query = "Select * from MembersTbl";
+            MembersList.DataSource = Con.GetData(Query);
         }
 
         private void Members_Load(object sender, EventArgs e)
@@ -57,14 +69,37 @@ namespace Dashboard
             this.Hide();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void LogOut_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void GetCoaches()
+        {
+            string Query = "select * from CoachsTbl";
+            CoachCb.DisplayMember = Con.GetData(Query).Columns["CName"].ToString();
+            CoachCb.ValueMember = Con.GetData(Query).Columns["CId"].ToString();
+            CoachCb.DataSource = Con.GetData(Query);
+        }
+
+        private void GetMships()
+        {
+            string Query = "select * from MembershipsTbl";
+            MShipCb.DisplayMember = Con.GetData(Query).Columns["MName"].ToString();
+            MShipCb.ValueMember = Con.GetData(Query).Columns["MshipId"].ToString();
+            MShipCb.DataSource = Con.GetData(Query);
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
