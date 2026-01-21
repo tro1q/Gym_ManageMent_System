@@ -73,7 +73,9 @@ namespace Dashboard
 
         private void LogOut_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           Login obj = new Login();
+            obj.Show();
+            this.Hide();
         }
 
         private void GetCoaches()
@@ -175,6 +177,88 @@ namespace Dashboard
 
 
             }
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MNameTb.Text == "" || PhoneTb.Text == "" || CoachCb.SelectedIndex == -1 || GenCb.SelectedIndex == -1 || MShipCb.SelectedIndex == -1 ||
+                    StatusCb.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Missing Information");
+
+                }
+                else
+                {
+                    string MName = MNameTb.Text;
+                    string Gender = GenCb.SelectedItem.ToString();
+                    string Phone = PhoneTb.Text;
+                    string DOB = DOBTb.Value.ToString("yyyy-MM-dd");
+                    string MJDate = JDateTb.Value.ToString("yyyy-MM-dd");
+                    int MShip = Convert.ToInt32(MShipCb.SelectedValue.ToString());
+                    int Coach = Convert.ToInt32(CoachCb.SelectedValue.ToString());
+                    string Timing = TimingCb.SelectedItem.ToString();
+                    string Status = StatusCb.SelectedItem.ToString();
+
+ string Query = "update MembersTbl set MName = '{0}',MGen = '{1}',MDOB = '{2}',MJDate = '{3}',MMembership = '{4}',MCoach = '{5}',MPhone = '{6}',MTiming = '{7}',MStatus = '{8}'Where MId = {9}";
+                    Query = string.Format(Query, MName, Gender, DOB, MJDate, MShip, Coach, Phone, Timing, Status,key);
+                    Con.setData(Query);
+                    ShowMembers();
+                    MessageBox.Show("Member Updated Successfully");
+                    ShowTempMessage("Member Updated Successfully");
+                    ClearFields();
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (key == 0)
+                {
+                    MessageBox.Show("Select a Member");
+
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this Receptionist?",
+                                          "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+
+                        string Query = "delete from MembersTbl where MId = {0}";
+                        Query = string.Format(Query, key);
+                        Con.setData(Query);
+                        ShowMembers();
+
+                        ShowTempMessage("Member Deleted Successfully");
+
+                        ClearFields();
+                    }
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private async void ShowTempMessage(string msg)
+        {
+            LabelMsg1.Text = msg;
+            LabelMsg1.Visible = true;
+
+            await Task.Delay(2000);
+
+            LabelMsg1.Visible = false;
         }
     }
 }

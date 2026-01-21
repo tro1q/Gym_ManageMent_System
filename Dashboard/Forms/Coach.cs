@@ -262,6 +262,13 @@ namespace Dashboard
             Obj.Show();
             this.Hide();
         }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            Login obj = new Login();
+            obj.Show();
+            this.Hide();
+        }
     }
 
 }

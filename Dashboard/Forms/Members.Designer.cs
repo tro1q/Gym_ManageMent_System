@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelMsg = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -66,6 +66,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.LabelMsg1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.MShipCb = new System.Windows.Forms.ComboBox();
             this.JDateTb = new System.Windows.Forms.DateTimePicker();
@@ -126,33 +127,33 @@
             // 
             // MembersList
             // 
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
-            this.MembersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Lime;
+            this.MembersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.MembersList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.MembersList.BackgroundColor = System.Drawing.Color.SeaShell;
             this.MembersList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MembersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MembersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.MembersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MembersList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MembersList.GridColor = System.Drawing.Color.Sienna;
             this.MembersList.Location = new System.Drawing.Point(0, 0);
             this.MembersList.Margin = new System.Windows.Forms.Padding(4);
             this.MembersList.Name = "MembersList";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MembersList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MembersList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.MembersList.RowHeadersWidth = 51;
             this.MembersList.Size = new System.Drawing.Size(1133, 441);
             this.MembersList.TabIndex = 1;
@@ -237,6 +238,7 @@
             this.EditBtn.TabIndex = 20;
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -249,6 +251,7 @@
             this.DeleteBtn.TabIndex = 19;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // label6
             // 
@@ -367,11 +370,11 @@
             this.LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogOut.ForeColor = System.Drawing.Color.Red;
             this.LogOut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LogOut.Location = new System.Drawing.Point(169, 750);
+            this.LogOut.Location = new System.Drawing.Point(84, 764);
             this.LogOut.Name = "LogOut";
-            this.LogOut.Size = new System.Drawing.Size(68, 24);
+            this.LogOut.Size = new System.Drawing.Size(89, 24);
             this.LogOut.TabIndex = 71;
-            this.LogOut.Text = "Exit";
+            this.LogOut.Text = "Logout";
             this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
             // 
             // BillLbl
@@ -522,6 +525,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.LabelMsg1);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.MShipCb);
             this.panel5.Controls.Add(this.JDateTb);
@@ -555,6 +559,19 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1353, 839);
             this.panel5.TabIndex = 7;
+            // 
+            // LabelMsg1
+            // 
+            this.LabelMsg1.BackColor = System.Drawing.Color.White;
+            this.LabelMsg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.LabelMsg1.ForeColor = System.Drawing.Color.Red;
+            this.LabelMsg1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelMsg1.Location = new System.Drawing.Point(1081, 73);
+            this.LabelMsg1.Name = "LabelMsg1";
+            this.LabelMsg1.Size = new System.Drawing.Size(269, 36);
+            this.LabelMsg1.TabIndex = 52;
+            this.LabelMsg1.Text = "Deleted Successfully!!";
+            this.LabelMsg1.Visible = false;
             // 
             // label11
             // 
@@ -738,5 +755,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox MShipCb;
+        private System.Windows.Forms.Label LabelMsg1;
     }
 }

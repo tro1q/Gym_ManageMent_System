@@ -40,6 +40,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BillLbl = new System.Windows.Forms.Label();
+            this.MemberShipLbl = new System.Windows.Forms.Label();
+            this.RecepLbl = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -68,9 +71,7 @@
             this.GenCb = new System.Windows.Forms.ComboBox();
             this.ChNameTb = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.BillLbl = new System.Windows.Forms.Label();
-            this.MemberShipLbl = new System.Windows.Forms.Label();
-            this.RecepLbl = new System.Windows.Forms.Label();
+            this.LogOut = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -164,6 +165,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Teal;
+            this.panel2.Controls.Add(this.LogOut);
             this.panel2.Controls.Add(this.BillLbl);
             this.panel2.Controls.Add(this.MemberShipLbl);
             this.panel2.Controls.Add(this.RecepLbl);
@@ -184,6 +186,45 @@
             this.panel2.Size = new System.Drawing.Size(200, 671);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // BillLbl
+            // 
+            this.BillLbl.AutoSize = true;
+            this.BillLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.BillLbl.ForeColor = System.Drawing.Color.Black;
+            this.BillLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BillLbl.Location = new System.Drawing.Point(85, 464);
+            this.BillLbl.Name = "BillLbl";
+            this.BillLbl.Size = new System.Drawing.Size(60, 24);
+            this.BillLbl.TabIndex = 43;
+            this.BillLbl.Text = "Billing";
+            this.BillLbl.Click += new System.EventHandler(this.BillLbl_Click);
+            // 
+            // MemberShipLbl
+            // 
+            this.MemberShipLbl.AutoSize = true;
+            this.MemberShipLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.MemberShipLbl.ForeColor = System.Drawing.Color.Black;
+            this.MemberShipLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.MemberShipLbl.Location = new System.Drawing.Point(73, 289);
+            this.MemberShipLbl.Name = "MemberShipLbl";
+            this.MemberShipLbl.Size = new System.Drawing.Size(116, 24);
+            this.MemberShipLbl.TabIndex = 41;
+            this.MemberShipLbl.Text = "Membership";
+            this.MemberShipLbl.Click += new System.EventHandler(this.MemberShipLbl_Click);
+            // 
+            // RecepLbl
+            // 
+            this.RecepLbl.AutoSize = true;
+            this.RecepLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.RecepLbl.ForeColor = System.Drawing.Color.Black;
+            this.RecepLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.RecepLbl.Location = new System.Drawing.Point(74, 375);
+            this.RecepLbl.Name = "RecepLbl";
+            this.RecepLbl.Size = new System.Drawing.Size(115, 24);
+            this.RecepLbl.TabIndex = 42;
+            this.RecepLbl.Text = "Reciptionists";
+            this.RecepLbl.Click += new System.EventHandler(this.RecepLbl_Click);
             // 
             // pictureBox5
             // 
@@ -520,44 +561,17 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Manage Coach";
             // 
-            // BillLbl
+            // LogOut
             // 
-            this.BillLbl.AutoSize = true;
-            this.BillLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
-            this.BillLbl.ForeColor = System.Drawing.Color.Black;
-            this.BillLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BillLbl.Location = new System.Drawing.Point(85, 464);
-            this.BillLbl.Name = "BillLbl";
-            this.BillLbl.Size = new System.Drawing.Size(60, 24);
-            this.BillLbl.TabIndex = 43;
-            this.BillLbl.Text = "Billing";
-            this.BillLbl.Click += new System.EventHandler(this.BillLbl_Click);
-            // 
-            // MemberShipLbl
-            // 
-            this.MemberShipLbl.AutoSize = true;
-            this.MemberShipLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
-            this.MemberShipLbl.ForeColor = System.Drawing.Color.Black;
-            this.MemberShipLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.MemberShipLbl.Location = new System.Drawing.Point(73, 289);
-            this.MemberShipLbl.Name = "MemberShipLbl";
-            this.MemberShipLbl.Size = new System.Drawing.Size(116, 24);
-            this.MemberShipLbl.TabIndex = 41;
-            this.MemberShipLbl.Text = "Membership";
-            this.MemberShipLbl.Click += new System.EventHandler(this.MemberShipLbl_Click);
-            // 
-            // RecepLbl
-            // 
-            this.RecepLbl.AutoSize = true;
-            this.RecepLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
-            this.RecepLbl.ForeColor = System.Drawing.Color.Black;
-            this.RecepLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.RecepLbl.Location = new System.Drawing.Point(74, 375);
-            this.RecepLbl.Name = "RecepLbl";
-            this.RecepLbl.Size = new System.Drawing.Size(115, 24);
-            this.RecepLbl.TabIndex = 42;
-            this.RecepLbl.Text = "Reciptionists";
-            this.RecepLbl.Click += new System.EventHandler(this.RecepLbl_Click);
+            this.LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOut.ForeColor = System.Drawing.Color.Red;
+            this.LogOut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LogOut.Location = new System.Drawing.Point(54, 623);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(89, 24);
+            this.LogOut.TabIndex = 72;
+            this.LogOut.Text = "Logout";
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
             // 
             // Coach
             // 
@@ -631,5 +645,6 @@
         private System.Windows.Forms.Label BillLbl;
         private System.Windows.Forms.Label MemberShipLbl;
         private System.Windows.Forms.Label RecepLbl;
+        private System.Windows.Forms.Label LogOut;
     }
 }

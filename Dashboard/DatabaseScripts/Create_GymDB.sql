@@ -75,3 +75,26 @@ BEGIN
     );
 END
 GO
+
+/* =========================
+   Finance / Billing Table
+   ========================= */
+IF OBJECT_ID('dbo.FinanceTbl', 'U') IS NULL
+BEGIN
+    CREATE TABLE [dbo].[FinanceTbl]
+    (
+        [BillId] INT IDENTITY(1,1) PRIMARY KEY,
+        [Agent] INT NOT NULL,
+        [Member] INT NOT NULL,
+        [BPeriod] VARCHAR(50) NOT NULL,
+        [BDate] DATE NOT NULL,
+        [BAmount] INT NOT NULL,
+
+        CONSTRAINT FK_Finance_Receptionist
+            FOREIGN KEY (Agent) REFERENCES ReceptionistTbl(ReceptId),
+
+        CONSTRAINT FK_Finance_Member
+            FOREIGN KEY (Member) REFERENCES MembersTbl(MId)
+    );
+END
+GO

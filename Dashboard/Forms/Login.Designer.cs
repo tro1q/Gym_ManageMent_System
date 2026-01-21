@@ -40,11 +40,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.PasswordTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.RecepRb = new System.Windows.Forms.RadioButton();
+            this.CoachRb = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.AdmLbl = new System.Windows.Forms.Label();
+            this.LoginBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,6 +157,7 @@
             this.PasswordTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordTb.Location = new System.Drawing.Point(445, 326);
             this.PasswordTb.Name = "PasswordTb";
+            this.PasswordTb.PasswordChar = '*';
             this.PasswordTb.Size = new System.Drawing.Size(221, 26);
             this.PasswordTb.TabIndex = 11;
             // 
@@ -171,39 +172,27 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Password";
             // 
-            // radioButton1
+            // RecepRb
             // 
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(445, 382);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(107, 41);
-            this.radioButton1.TabIndex = 13;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Receptionist";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.RecepRb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RecepRb.Location = new System.Drawing.Point(445, 382);
+            this.RecepRb.Name = "RecepRb";
+            this.RecepRb.Size = new System.Drawing.Size(107, 41);
+            this.RecepRb.TabIndex = 13;
+            this.RecepRb.TabStop = true;
+            this.RecepRb.Text = "Receptionist";
+            this.RecepRb.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // CoachRb
             // 
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(577, 382);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(89, 41);
-            this.radioButton2.TabIndex = 14;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Coach";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(478, 458);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 41);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "LOGIN";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CoachRb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoachRb.Location = new System.Drawing.Point(577, 382);
+            this.CoachRb.Name = "CoachRb";
+            this.CoachRb.Size = new System.Drawing.Size(89, 41);
+            this.CoachRb.TabIndex = 14;
+            this.CoachRb.TabStop = true;
+            this.CoachRb.Text = "Coach";
+            this.CoachRb.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -215,16 +204,29 @@
             this.label4.Text = "Are You ";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label10
+            // AdmLbl
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(518, 519);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 20);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Admin?";
+            this.AdmLbl.AutoSize = true;
+            this.AdmLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdmLbl.ForeColor = System.Drawing.Color.Black;
+            this.AdmLbl.Location = new System.Drawing.Point(518, 519);
+            this.AdmLbl.Name = "AdmLbl";
+            this.AdmLbl.Size = new System.Drawing.Size(63, 20);
+            this.AdmLbl.TabIndex = 17;
+            this.AdmLbl.Text = "Admin?";
+            this.AdmLbl.Click += new System.EventHandler(this.AdmLbl_Click);
+            // 
+            // LoginBtn
+            // 
+            this.LoginBtn.BackColor = System.Drawing.Color.SaddleBrown;
+            this.LoginBtn.ForeColor = System.Drawing.Color.White;
+            this.LoginBtn.Location = new System.Drawing.Point(475, 445);
+            this.LoginBtn.Name = "LoginBtn";
+            this.LoginBtn.Size = new System.Drawing.Size(149, 41);
+            this.LoginBtn.TabIndex = 18;
+            this.LoginBtn.Text = "LOGIN";
+            this.LoginBtn.UseVisualStyleBackColor = false;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // Login
             // 
@@ -232,11 +234,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(837, 659);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.LoginBtn);
+            this.Controls.Add(this.AdmLbl);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.CoachRb);
+            this.Controls.Add(this.RecepRb);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.PasswordTb);
             this.Controls.Add(this.label2);
@@ -263,15 +265,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox PasswordTb;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton RecepRb;
+        private System.Windows.Forms.RadioButton CoachRb;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label AdmLbl;
+        private System.Windows.Forms.Button LoginBtn;
     }
 }
