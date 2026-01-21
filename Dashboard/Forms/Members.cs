@@ -92,14 +92,89 @@ namespace Dashboard
             MShipCb.DataSource = Con.GetData(Query);
         }
 
+        int key = 0;
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (MNameTb.Text == "" || PhoneTb.Text == "" || CoachCb.SelectedIndex == -1 || GenCb.SelectedIndex == -1 || MShipCb.SelectedIndex == -1 ||
+                    StatusCb.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Missing Information");
 
+                }
+                else
+                {
+                    string MName = MNameTb.Text;
+                    string Gender = GenCb.SelectedItem.ToString();
+                    string Phone = PhoneTb.Text;
+                    string DOB = DOBTb.Value.ToString("yyyy-MM-dd");
+                    string MJDate = JDateTb.Value.ToString("yyyy-MM-dd");
+                    int MShip = Convert.ToInt32 (MShipCb.SelectedValue.ToString());
+                    int Coach = Convert.ToInt32 (CoachCb.SelectedValue.ToString());
+                    string Timing = TimingCb.SelectedItem.ToString();
+                    string Status = StatusCb.SelectedItem.ToString();
+
+                    string Query = "insert into MembersTbl values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')";
+                    Query = string.Format(Query, MName,Gender,DOB,MJDate,MShip,Coach,Phone,Timing,Status);
+                    Con.setData(Query);
+                  ShowMembers();
+                    MessageBox.Show("Member Added Successfully");
+                    ClearFields();
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClearFields()
+        {
+            MNameTb.Text = "";
+            PhoneTb.Text = "";
+            GenCb.SelectedIndex = -1;
+            CoachCb.SelectedIndex = -1;
+            MShipCb.SelectedIndex = -1;
+            TimingCb.SelectedIndex = -1;
+            StatusCb.SelectedIndex = -1;
+        }
+
+        private void MembersList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || MembersList.Rows[e.RowIndex].IsNewRow) //Empty row error handling
+                return;
+
+            if (e.RowIndex >= 0)
+            {
+               MNameTb.Text = MembersList.Rows[e.RowIndex].Cells["MName"].Value.ToString();
+              GenCb.Text = MembersList.Rows[e.RowIndex].Cells["MGen"].Value.ToString();
+                DOBTb.Text = MembersList.Rows[e.RowIndex].Cells["MDOB"].Value.ToString();
+                JDateTb.Text = MembersList.Rows[e.RowIndex].Cells["MJDate"].Value.ToString();
+                MShipCb.SelectedValue = MembersList.Rows[e.RowIndex].Cells["MMembership"].Value;
+                CoachCb.SelectedValue = MembersList.Rows[e.RowIndex].Cells["MCoach"].Value;
+                PhoneTb.Text = MembersList.Rows[e.RowIndex].Cells["MPhone"].Value.ToString();
+                TimingCb.Text = MembersList.Rows[e.RowIndex].Cells["MTiming"].Value.ToString();
+                StatusCb.Text = MembersList.Rows[e.RowIndex].Cells["MStatus"].Value.ToString();
+               
+            }
+
+            if (MNameTb.Text == "")
+            {
+                key = 0;
+            }
+            else
+            {
+                key = Convert.ToInt32(MembersList.Rows[e.RowIndex].Cells["MId"].Value.ToString());
+
+
+            }
         }
     }
 }

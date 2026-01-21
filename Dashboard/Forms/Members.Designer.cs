@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelMsg = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -52,7 +52,7 @@
             this.MNameTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.LogOut = new System.Windows.Forms.Label();
             this.BillLbl = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.MemberShiplbl = new System.Windows.Forms.Label();
@@ -65,27 +65,27 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.LogOut = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.MShipCb = new System.Windows.Forms.ComboBox();
+            this.JDateTb = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.CoachCb = new System.Windows.Forms.ComboBox();
+            this.StatusCb = new System.Windows.Forms.ComboBox();
+            this.TimingCb = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.TimingCb = new System.Windows.Forms.ComboBox();
-            this.StatusCb = new System.Windows.Forms.ComboBox();
-            this.CoachCb = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.JDateTb = new System.Windows.Forms.DateTimePicker();
-            this.MShipCb = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // LabelMsg
@@ -126,36 +126,37 @@
             // 
             // MembersList
             // 
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Lime;
-            this.MembersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
+            this.MembersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.MembersList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.MembersList.BackgroundColor = System.Drawing.Color.SeaShell;
             this.MembersList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MembersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MembersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.MembersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MembersList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MembersList.GridColor = System.Drawing.Color.Sienna;
             this.MembersList.Location = new System.Drawing.Point(0, 0);
             this.MembersList.Margin = new System.Windows.Forms.Padding(4);
             this.MembersList.Name = "MembersList";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MembersList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MembersList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.MembersList.RowHeadersWidth = 51;
             this.MembersList.Size = new System.Drawing.Size(1133, 441);
             this.MembersList.TabIndex = 1;
+            this.MembersList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MembersList_CellContentClick);
             // 
             // label7
             // 
@@ -361,42 +362,17 @@
             this.panel2.Size = new System.Drawing.Size(224, 839);
             this.panel2.TabIndex = 0;
             // 
-            // panel5
+            // LogOut
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.MShipCb);
-            this.panel5.Controls.Add(this.JDateTb);
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.CoachCb);
-            this.panel5.Controls.Add(this.StatusCb);
-            this.panel5.Controls.Add(this.TimingCb);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.LabelMsg);
-            this.panel5.Controls.Add(this.SaveBtn);
-            this.panel5.Controls.Add(this.panel4);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.PhoneTb);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.label13);
-            this.panel5.Controls.Add(this.EditBtn);
-            this.panel5.Controls.Add(this.DeleteBtn);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.DOBTb);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.GenCb);
-            this.panel5.Controls.Add(this.MNameTb);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.panel2);
-            this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.panel5.ForeColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(3, -58);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1353, 839);
-            this.panel5.TabIndex = 7;
+            this.LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOut.ForeColor = System.Drawing.Color.Red;
+            this.LogOut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LogOut.Location = new System.Drawing.Point(169, 750);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(68, 24);
+            this.LogOut.TabIndex = 71;
+            this.LogOut.Text = "Exit";
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
             // 
             // BillLbl
             // 
@@ -543,17 +519,123 @@
             this.label14.Size = new System.Drawing.Size(0, 20);
             this.label14.TabIndex = 59;
             // 
-            // LogOut
+            // panel5
             // 
-            this.LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOut.ForeColor = System.Drawing.Color.Red;
-            this.LogOut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LogOut.Location = new System.Drawing.Point(169, 750);
-            this.LogOut.Name = "LogOut";
-            this.LogOut.Size = new System.Drawing.Size(68, 24);
-            this.LogOut.TabIndex = 71;
-            this.LogOut.Text = "Exit";
-            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.MShipCb);
+            this.panel5.Controls.Add(this.JDateTb);
+            this.panel5.Controls.Add(this.label10);
+            this.panel5.Controls.Add(this.CoachCb);
+            this.panel5.Controls.Add(this.StatusCb);
+            this.panel5.Controls.Add(this.TimingCb);
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.LabelMsg);
+            this.panel5.Controls.Add(this.SaveBtn);
+            this.panel5.Controls.Add(this.panel4);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.PhoneTb);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.EditBtn);
+            this.panel5.Controls.Add(this.DeleteBtn);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.DOBTb);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.GenCb);
+            this.panel5.Controls.Add(this.MNameTb);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.panel2);
+            this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.panel5.ForeColor = System.Drawing.Color.Black;
+            this.panel5.Location = new System.Drawing.Point(3, -58);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1353, 839);
+            this.panel5.TabIndex = 7;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label11.Location = new System.Drawing.Point(1128, 137);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 20);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "MemberShip";
+            // 
+            // MShipCb
+            // 
+            this.MShipCb.FormattingEnabled = true;
+            this.MShipCb.Location = new System.Drawing.Point(1132, 165);
+            this.MShipCb.Margin = new System.Windows.Forms.Padding(4);
+            this.MShipCb.Name = "MShipCb";
+            this.MShipCb.Size = new System.Drawing.Size(138, 28);
+            this.MShipCb.TabIndex = 50;
+            // 
+            // JDateTb
+            // 
+            this.JDateTb.Location = new System.Drawing.Point(896, 168);
+            this.JDateTb.Margin = new System.Windows.Forms.Padding(4);
+            this.JDateTb.Name = "JDateTb";
+            this.JDateTb.Size = new System.Drawing.Size(211, 26);
+            this.JDateTb.TabIndex = 49;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label10.Location = new System.Drawing.Point(690, 246);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 20);
+            this.label10.TabIndex = 48;
+            this.label10.Text = "Status";
+            // 
+            // CoachCb
+            // 
+            this.CoachCb.FormattingEnabled = true;
+            this.CoachCb.Location = new System.Drawing.Point(910, 281);
+            this.CoachCb.Margin = new System.Windows.Forms.Padding(4);
+            this.CoachCb.Name = "CoachCb";
+            this.CoachCb.Size = new System.Drawing.Size(197, 28);
+            this.CoachCb.TabIndex = 47;
+            // 
+            // StatusCb
+            // 
+            this.StatusCb.FormattingEnabled = true;
+            this.StatusCb.Items.AddRange(new object[] {
+            "Paid",
+            "Pending",
+            "Cancelled"});
+            this.StatusCb.Location = new System.Drawing.Point(694, 283);
+            this.StatusCb.Margin = new System.Windows.Forms.Padding(4);
+            this.StatusCb.Name = "StatusCb";
+            this.StatusCb.Size = new System.Drawing.Size(197, 28);
+            this.StatusCb.TabIndex = 46;
+            // 
+            // TimingCb
+            // 
+            this.TimingCb.FormattingEnabled = true;
+            this.TimingCb.Items.AddRange(new object[] {
+            "6AM - 8AM",
+            "8AM - 10AM",
+            "10AM - 12PM",
+            "1PM - 3PM",
+            "3PM - 5PM",
+            "5PM - 7PM",
+            "7PM - 9PM",
+            ""});
+            this.TimingCb.Location = new System.Drawing.Point(466, 283);
+            this.TimingCb.Margin = new System.Windows.Forms.Padding(4);
+            this.TimingCb.Name = "TimingCb";
+            this.TimingCb.Size = new System.Drawing.Size(197, 28);
+            this.TimingCb.TabIndex = 45;
             // 
             // label8
             // 
@@ -580,74 +662,6 @@
             this.label13.TabIndex = 22;
             this.label13.Text = " Members List";
             // 
-            // TimingCb
-            // 
-            this.TimingCb.FormattingEnabled = true;
-            this.TimingCb.Location = new System.Drawing.Point(466, 283);
-            this.TimingCb.Margin = new System.Windows.Forms.Padding(4);
-            this.TimingCb.Name = "TimingCb";
-            this.TimingCb.Size = new System.Drawing.Size(197, 28);
-            this.TimingCb.TabIndex = 45;
-            // 
-            // StatusCb
-            // 
-            this.StatusCb.FormattingEnabled = true;
-            this.StatusCb.Location = new System.Drawing.Point(694, 283);
-            this.StatusCb.Margin = new System.Windows.Forms.Padding(4);
-            this.StatusCb.Name = "StatusCb";
-            this.StatusCb.Size = new System.Drawing.Size(197, 28);
-            this.StatusCb.TabIndex = 46;
-            // 
-            // CoachCb
-            // 
-            this.CoachCb.FormattingEnabled = true;
-            this.CoachCb.Location = new System.Drawing.Point(910, 281);
-            this.CoachCb.Margin = new System.Windows.Forms.Padding(4);
-            this.CoachCb.Name = "CoachCb";
-            this.CoachCb.Size = new System.Drawing.Size(197, 28);
-            this.CoachCb.TabIndex = 47;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(690, 246);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 20);
-            this.label10.TabIndex = 48;
-            this.label10.Text = "Status";
-            // 
-            // JDateTb
-            // 
-            this.JDateTb.Location = new System.Drawing.Point(896, 168);
-            this.JDateTb.Margin = new System.Windows.Forms.Padding(4);
-            this.JDateTb.Name = "JDateTb";
-            this.JDateTb.Size = new System.Drawing.Size(211, 26);
-            this.JDateTb.TabIndex = 49;
-            // 
-            // MShipCb
-            // 
-            this.MShipCb.FormattingEnabled = true;
-            this.MShipCb.Location = new System.Drawing.Point(1132, 165);
-            this.MShipCb.Margin = new System.Windows.Forms.Padding(4);
-            this.MShipCb.Name = "MShipCb";
-            this.MShipCb.Size = new System.Drawing.Size(110, 28);
-            this.MShipCb.TabIndex = 50;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(1128, 137);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 20);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "MemberShip";
-            // 
             // Members
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -668,13 +682,13 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
