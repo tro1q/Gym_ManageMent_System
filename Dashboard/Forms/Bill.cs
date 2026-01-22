@@ -35,10 +35,16 @@ namespace Dashboard
 
         }
 
-       
+
+        string role = Login.UserRole;
 
         private void CoachLbl_Click(object sender, EventArgs e)
         {
+            if (role == "Coach")
+            {
+                MessageBox.Show("Access Denied");
+                return;
+            }
             Coach coach = new Coach();
             coach.Show();
             this.Hide();
@@ -46,6 +52,11 @@ namespace Dashboard
 
         private void MemberLbl_Click(object sender, EventArgs e)
         {
+            //if (role == "Coach" || role == "Receptionist")
+            //{
+            //    MessageBox.Show("Access Denied");
+            //    return;
+            //}
             Members members = new Members();
             members.Show();
             this.Hide();
@@ -53,6 +64,11 @@ namespace Dashboard
 
         private void MemberShipLbl_Click(object sender, EventArgs e)
         {
+            if (role == "Coach")
+            {
+                MessageBox.Show("Access Denied");
+                return;
+            }
             Memberships memberships = new Memberships();
             memberships.Show();
             this.Hide();
@@ -60,6 +76,12 @@ namespace Dashboard
 
         private void RecepLbl_Click(object sender, EventArgs e)
         {
+            if (role == "Coach" || role == "Receptionist")
+            {
+                MessageBox.Show("Access Denied");
+                return;
+            }
+
             Receptionist receptionist = new Receptionist();
             receptionist.Show();
             this.Hide();
@@ -67,6 +89,11 @@ namespace Dashboard
 
         private void BillLbl_Click(object sender, EventArgs e)
         {
+            if (role == "Coach")
+            {
+                MessageBox.Show("Access Denied");
+                return;
+            }
             Bill bill = new Bill();
             bill.Show();
             this.Hide();
@@ -86,6 +113,10 @@ namespace Dashboard
             AmountTb.Text = "";
             MemberCb.SelectedIndex = -1;
         }
+
+        private bool BillDone = false; // Tracks whether a bill was added
+       
+
         private void AddBtn_Click(object sender, EventArgs e)
         {
             try
@@ -110,6 +141,28 @@ namespace Dashboard
                     MessageBox.Show("Bill Added Successfully");
                    // ClearFields();
                     ShowBills();
+                    BillDone = true;
+
+                    DataTable dt = Con.GetData($"SELECT * FROM MembersTbl WHERE MId = {Member}");
+                    if (dt.Rows.Count > 0)
+                    {
+                        string memberName = dt.Rows[0]["MName"].ToString();
+                        string memberPhone = dt.Rows[0]["MPhone"].ToString();
+                        string memberGender = dt.Rows[0]["MGen"].ToString();
+                        string memberDOB = Convert.ToDateTime(dt.Rows[0]["MDOB"]).ToShortDateString();
+
+                        billContent = "";
+                        billContent += "====== Gym Bill ======\n";
+                        billContent += $"Member Name: {memberName}\n";
+                        billContent += $"Gender: {memberGender}\n";
+                        billContent += $"DOB: {memberDOB}\n";
+                        billContent += $"Phone: {memberPhone}\n";
+                        billContent += $"Billing Period: {Period}\n";
+                        billContent += $"Billing Date: {BDate}\n";
+                        billContent += $"Amount: {Amount}\n";
+                        billContent += "-------------------------\n";
+                        billContent += "Thank you for your payment!";
+                    }
                 }
 
             }
@@ -132,36 +185,59 @@ namespace Dashboard
             obj.Show();
             this.Hide();
         }
-        //private PrintDocument printDocument = new PrintDocument();
-        //private string billContent = ""; // This will hold the text/content of the bill
+        private PrintDocument printDocument = new PrintDocument();
+        private string billContent = ""; // This will hold the text/content of the bill
 
-        //private DataTable GetMemberDetails(int memberId)
-        //{
-        //    string query = $"SELECT * FROM MembersTbl WHERE MId = {memberId}";
-        //    return Con.GetData(query);
-        //}
+        private DataTable GetMemberDetails(int memberId)
+        {
+            string query = $"SELECT * FROM MembersTbl WHERE MId = {memberId}";
+            return Con.GetData(query);
+        }
 
 
-        //private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
-        //{
-        //    // Font and starting position
-        //    Font font = new Font("Arial", 12, FontStyle.Regular);
-        //    float startX = 50;
-        //    float startY = 50;
-        //    float lineHeight = font.GetHeight(e.Graphics) + 5;
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            // Font and starting position
+            Font font = new Font("Arial", 12, FontStyle.Regular);
+            float startX = 50;
+            float startY = 50;
+            float lineHeight = font.GetHeight(e.Graphics) + 5;
 
-        //    // Draw the bill line by line
-        //    string[] lines = billContent.Split('\n');
-        //    for (int i = 0; i < lines.Length; i++)
-        //    {
-        //        e.Graphics.DrawString(lines[i], font, Brushes.Black, startX, startY + (i * lineHeight));
-        //    }
-        //}
+            // Draw the bill line by line
+            string[] lines = billContent.Split('\n');
+            for (int i = 0; i < lines.Length; i++)
+            {
+                e.Graphics.DrawString(lines[i], font, Brushes.Black, startX, startY + (i * lineHeight));
+            }
+        }
 
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
-          
+            if (!BillDone)
+            {
+                MessageBox.Show("Please click Add before printing the bill!");
+                return;
+            }
+
+            PrintDocument printDocument = new PrintDocument();
+            printDocument.PrintPage += (s, ev) =>
+            {
+                Font font = new Font("Arial", 12);
+                float startX = 50;
+                float startY = 50;
+                float lineHeight = font.GetHeight(ev.Graphics) + 5;
+
+                string[] lines = billContent.Split('\n');
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    ev.Graphics.DrawString(lines[i], font, Brushes.Black, startX, startY + (i * lineHeight));
+                }
+            };
+
+            PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+            previewDialog.Document = printDocument;
+            previewDialog.ShowDialog();
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Dashboard
         }
 
         public static int UserId;
+        public static string UserRole;
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -53,6 +54,7 @@ namespace Dashboard
                         else
                         {
                             UserId = Convert.ToInt32(dt.Rows[0]["ReceptId"]);
+                            UserRole = "Receptionist";
                             Members obj = new Members();
                             obj.Show();
                             this.Hide();
@@ -74,7 +76,8 @@ namespace Dashboard
                         else
                         {
                             UserId = Convert.ToInt32(dt.Rows[0]["CId"]);
-                           Coach obj = new Coach();
+                           UserRole = "Coach";
+                            Members obj = new Members();
                             obj.Show();
                             this.Hide();
                         }
@@ -95,9 +98,20 @@ namespace Dashboard
 
         private void AdmLbl_Click(object sender, EventArgs e)
         {
-            Receptionist Obj = new Receptionist();
-            Obj.Show();
-            this.Hide();
+            if (UNameTb.Text == "admin" && PasswordTb.Text == "123")
+            {
+                UserRole = "Admin";
+                UserId = 0;
+
+                Receptionist obj = new Receptionist();
+                obj.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Admin Credentials!!");
+
+            }
         }
     }
 }

@@ -34,8 +34,14 @@ namespace Dashboard
 
         }
 
+        string role = Login.UserRole;
         private void CoachLbl_Click(object sender, EventArgs e)
         {
+            if (role == "Coach")
+            {
+                MessageBox.Show("Access Denied");
+                return;
+            }
             Coach coach = new Coach();
             coach.Show();
             this.Hide();
@@ -43,6 +49,11 @@ namespace Dashboard
 
         private void MemberLbl_Click(object sender, EventArgs e)
         {
+            //if (role == "Coach" || role == "Receptionist")
+            //{
+            //    MessageBox.Show("Access Denied");
+            //    return;
+            //}
             Members members = new Members();
             members.Show();
             this.Hide();
@@ -50,6 +61,11 @@ namespace Dashboard
 
         private void MemberShiplbl_Click(object sender, EventArgs e)
         {
+            if (role == "Coach")
+            {
+                MessageBox.Show("Access Denied");
+                return;
+            }
             Memberships memberships = new Memberships();
             memberships.Show();
             this.Hide();
@@ -57,6 +73,11 @@ namespace Dashboard
 
         private void RecepLbl_Click(object sender, EventArgs e)
         {
+            if (role == "Coach" || role == "Receptionist")
+            {
+                MessageBox.Show("Access Denied");
+                return;
+            }
             Receptionist receptionist = new Receptionist();
             receptionist.Show();
             this.Hide();
@@ -64,6 +85,11 @@ namespace Dashboard
 
         private void BillLbl_Click(object sender, EventArgs e)
         {
+            if (role == "Coach")
+            {
+                MessageBox.Show("Access Denied");
+                return;
+            }
             Bill bill = new Bill();
             bill.Show();
             this.Hide();

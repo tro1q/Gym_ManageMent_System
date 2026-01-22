@@ -186,11 +186,18 @@ namespace Dashboard
 
             }
         }
-      
 
+
+        string role = Login.UserRole;
         private void CoachLabel_Click(object sender, EventArgs e)
         {
-           Coach Obj = new Coach();
+           
+            if(role == "Coach")
+            {
+                MessageBox.Show("Access Denied");
+                return;
+            }
+            Coach Obj = new Coach();
             Obj.Show();
             this.Hide();
         }
@@ -211,6 +218,11 @@ namespace Dashboard
 
         private void RecepLbl_Click(object sender, EventArgs e)
         {
+            if (role == "Coach" || role == "Receptionist")
+            {
+                MessageBox.Show("Access Denied");
+                return;
+            }
             Receptionist obj = new Receptionist();
             obj.Show();
             this.Hide();
@@ -218,6 +230,11 @@ namespace Dashboard
 
         private void BillLbl_Click(object sender, EventArgs e)
         {
+            if (role == "Coach")
+            {
+                MessageBox.Show("Access Denied");
+                return;
+            }
             Bill obj = new Bill();
             obj.Show();
             this.Hide();
@@ -229,5 +246,8 @@ namespace Dashboard
             obj.Show();
             this.Hide();
         }
+
+       
+
     }
 }
