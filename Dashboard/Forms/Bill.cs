@@ -114,7 +114,7 @@ namespace Dashboard
             MemberCb.SelectedIndex = -1;
         }
 
-        private bool BillDone = false; // Tracks whether a bill was added
+        private bool BillDone = false;
        
 
         private void AddBtn_Click(object sender, EventArgs e)
@@ -186,7 +186,7 @@ namespace Dashboard
             this.Hide();
         }
         private PrintDocument printDocument = new PrintDocument();
-        private string billContent = ""; // This will hold the text/content of the bill
+        private string billContent = ""; 
 
         private DataTable GetMemberDetails(int memberId)
         {
@@ -197,13 +197,13 @@ namespace Dashboard
 
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
-            // Font and starting position
+           
             Font font = new Font("Arial", 12, FontStyle.Regular);
             float startX = 50;
             float startY = 50;
             float lineHeight = font.GetHeight(e.Graphics) + 5;
 
-            // Draw the bill line by line
+           
             string[] lines = billContent.Split('\n');
             for (int i = 0; i < lines.Length; i++)
             {
@@ -238,6 +238,7 @@ namespace Dashboard
             PrintPreviewDialog previewDialog = new PrintPreviewDialog();
             previewDialog.Document = printDocument;
             previewDialog.ShowDialog();
+            ClearFields();
         }
     }
 }

@@ -39,10 +39,10 @@ namespace Dashboard
                 {
                     string Query = "";
 
-                    // 🔹 Receptionist Login
+                   
                     if (RecepRb.Checked)
                     {
-                        Query = "SELECT * FROM ReceptionistTbl WHERE RecepName='{0}' AND RecepPass='{1}'";
+                        Query = @"SELECT * FROM ReceptionistTbl WHERE RecepName = '{0}' COLLATE Latin1_General_CS_AS AND RecepPass = '{1}' COLLATE Latin1_General_CS_AS";
                         Query = string.Format(Query, UNameTb.Text, PasswordTb.Text);
 
                         DataTable dt = Con.GetData(Query);
@@ -61,10 +61,10 @@ namespace Dashboard
                         }
                     }
 
-                    // 🔹 Coach Login
+                  
                     else if (CoachRb.Checked)
                     {
-                        Query = "SELECT * FROM CoachsTbl WHERE CName='{0}' AND CPass='{1}'";
+                        Query = @"SELECT * FROM CoachsTbl  WHERE CName = '{0}' COLLATE Latin1_General_CS_AS AND CPass = '{1}' COLLATE Latin1_General_CS_AS";
                         Query = string.Format(Query, UNameTb.Text, PasswordTb.Text);
 
                         DataTable dt = Con.GetData(Query);
@@ -98,19 +98,36 @@ namespace Dashboard
 
         private void AdmLbl_Click(object sender, EventArgs e)
         {
-            if (UNameTb.Text == "admin" && PasswordTb.Text == "123")
-            {
-                UserRole = "Admin";
-                UserId = 0;
 
-                Receptionist obj = new Receptionist();
+            if (UNameTb.Text == "" || PasswordTb.Text == "")
+            {
+                MessageBox.Show("Missing Information!!");
+                return;
+            }
+
+            try
+            {
+                string Query = "SELECT * FROM AdminTbl  WHERE AdminName = '{0}' COLLATE Latin1_General_CS_AS AND AdminPass = '{1}' COLLATE Latin1_General_CS_AS";
+                Query = string.Format(Query, UNameTb.Text, PasswordTb.Text);
+
+                DataTable dt = Con.GetData(Query);
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Invalid Admin");
+                    return;
+                }
+
+                Login.UserId = Convert.ToInt32(dt.Rows[0]["AdminId"]);
+                Login.UserRole = "Admin";
+
+               Members obj = new Members();
                 obj.Show();
                 this.Hide();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Invalid Admin Credentials!!");
-
+                MessageBox.Show(ex.Message);
             }
         }
     }

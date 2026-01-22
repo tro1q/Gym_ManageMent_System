@@ -63,9 +63,9 @@ BEGIN
         [MJDate] DATE NOT NULL,
         [MMembership] INT NOT NULL,
         [MCoach] INT NOT NULL,
-        [MPhone] VARCHAR(10) NOT NULL,
-        [MTiming] VARCHAR(10) NOT NULL,
-        [MStatus] VARCHAR(10) NOT NULL,
+        [MPhone] VARCHAR(20) NOT NULL,
+        [MTiming] VARCHAR(20) NOT NULL,
+        [MStatus] VARCHAR(20) NOT NULL,
 
         CONSTRAINT FK1 
             FOREIGN KEY (MMembership) REFERENCES MembershipsTbl(MShipid),
@@ -98,3 +98,18 @@ BEGIN
     );
 END
 GO
+
+
+IF OBJECT_ID('dbo.AdminTbl', 'U') IS NULL
+BEGIN
+    CREATE TABLE [dbo].[AdminTbl] (
+        [AdminId]   INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,
+        [AdminName] VARCHAR(50) NOT NULL,
+        [AdminPass] VARCHAR(50) NOT NULL
+    );
+
+    -- Optional: Insert default admin
+    INSERT INTO AdminTbl (AdminName, AdminPass)
+    VALUES ('admin', '123');
+END
+
