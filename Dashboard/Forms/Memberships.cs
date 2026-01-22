@@ -1,4 +1,5 @@
 ﻿using Dashboard.DataCon;
+using Dashboard.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -233,6 +234,18 @@ namespace Dashboard
             Bill bill = new Bill();
             bill.Show();
             this.Hide();
+        }
+
+        private void TrackerLbl_Click(object sender, EventArgs e)
+        {
+            WorkoutTracker tracker = new WorkoutTracker();
+            tracker.Show();
+            this.Hide();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

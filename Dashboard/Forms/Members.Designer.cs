@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelMsg = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -76,6 +76,8 @@
             this.TimingCb = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.TrackerLbl = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelMsg
@@ -127,33 +130,33 @@
             // 
             // MembersList
             // 
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Lime;
-            this.MembersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Lime;
+            this.MembersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.MembersList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.MembersList.BackgroundColor = System.Drawing.Color.SeaShell;
             this.MembersList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MembersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MembersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.MembersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MembersList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MembersList.GridColor = System.Drawing.Color.Sienna;
             this.MembersList.Location = new System.Drawing.Point(0, 0);
             this.MembersList.Margin = new System.Windows.Forms.Padding(4);
             this.MembersList.Name = "MembersList";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MembersList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MembersList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.MembersList.RowHeadersWidth = 51;
             this.MembersList.Size = new System.Drawing.Size(1133, 441);
             this.MembersList.TabIndex = 1;
@@ -167,7 +170,7 @@
             this.label7.Location = new System.Drawing.Point(285, 246);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 25);
+            this.label7.Size = new System.Drawing.Size(55, 20);
             this.label7.TabIndex = 28;
             this.label7.Text = "Phone";
             // 
@@ -179,7 +182,7 @@
             this.label4.Location = new System.Drawing.Point(478, 246);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 25);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 27;
             this.label4.Text = "Timing";
             // 
@@ -203,7 +206,7 @@
             this.PhoneTb.Location = new System.Drawing.Point(284, 283);
             this.PhoneTb.Margin = new System.Windows.Forms.Padding(4);
             this.PhoneTb.Name = "PhoneTb";
-            this.PhoneTb.Size = new System.Drawing.Size(164, 30);
+            this.PhoneTb.Size = new System.Drawing.Size(164, 26);
             this.PhoneTb.TabIndex = 25;
             // 
             // panel3
@@ -223,7 +226,7 @@
             this.label3.Location = new System.Drawing.Point(892, 137);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 25);
+            this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 24;
             this.label3.Text = "Join Date";
             // 
@@ -261,7 +264,7 @@
             this.label6.Location = new System.Drawing.Point(597, 137);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 25);
+            this.label6.Size = new System.Drawing.Size(99, 20);
             this.label6.TabIndex = 13;
             this.label6.Text = "Date of Birth";
             // 
@@ -270,7 +273,7 @@
             this.DOBTb.Location = new System.Drawing.Point(601, 165);
             this.DOBTb.Margin = new System.Windows.Forms.Padding(4);
             this.DOBTb.Name = "DOBTb";
-            this.DOBTb.Size = new System.Drawing.Size(264, 30);
+            this.DOBTb.Size = new System.Drawing.Size(264, 26);
             this.DOBTb.TabIndex = 11;
             // 
             // label5
@@ -281,7 +284,7 @@
             this.label5.Location = new System.Drawing.Point(439, 142);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 25);
+            this.label5.Size = new System.Drawing.Size(63, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Gender";
             // 
@@ -302,7 +305,7 @@
             this.label2.Location = new System.Drawing.Point(285, 137);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 25);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Name";
             // 
@@ -315,7 +318,7 @@
             this.GenCb.Location = new System.Drawing.Point(443, 166);
             this.GenCb.Margin = new System.Windows.Forms.Padding(4);
             this.GenCb.Name = "GenCb";
-            this.GenCb.Size = new System.Drawing.Size(136, 33);
+            this.GenCb.Size = new System.Drawing.Size(136, 28);
             this.GenCb.TabIndex = 8;
             // 
             // MNameTb
@@ -324,7 +327,7 @@
             this.MNameTb.Location = new System.Drawing.Point(284, 168);
             this.MNameTb.Margin = new System.Windows.Forms.Padding(4);
             this.MNameTb.Name = "MNameTb";
-            this.MNameTb.Size = new System.Drawing.Size(137, 30);
+            this.MNameTb.Size = new System.Drawing.Size(137, 26);
             this.MNameTb.TabIndex = 2;
             // 
             // label1
@@ -343,6 +346,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Teal;
+            this.panel2.Controls.Add(this.pictureBox7);
+            this.panel2.Controls.Add(this.TrackerLbl);
             this.panel2.Controls.Add(this.LogOut);
             this.panel2.Controls.Add(this.BillLbl);
             this.panel2.Controls.Add(this.pictureBox5);
@@ -385,7 +390,7 @@
             this.BillLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.BillLbl.Location = new System.Drawing.Point(113, 572);
             this.BillLbl.Name = "BillLbl";
-            this.BillLbl.Size = new System.Drawing.Size(80, 29);
+            this.BillLbl.Size = new System.Drawing.Size(60, 24);
             this.BillLbl.TabIndex = 64;
             this.BillLbl.Text = "Billing";
             this.BillLbl.Click += new System.EventHandler(this.BillLbl_Click);
@@ -410,7 +415,7 @@
             this.MemberShiplbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MemberShiplbl.Location = new System.Drawing.Point(101, 397);
             this.MemberShiplbl.Name = "MemberShiplbl";
-            this.MemberShiplbl.Size = new System.Drawing.Size(148, 29);
+            this.MemberShiplbl.Size = new System.Drawing.Size(116, 24);
             this.MemberShiplbl.TabIndex = 62;
             this.MemberShiplbl.Text = "Membership";
             this.MemberShiplbl.Click += new System.EventHandler(this.MemberShiplbl_Click);
@@ -423,7 +428,7 @@
             this.RecepLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.RecepLbl.Location = new System.Drawing.Point(102, 483);
             this.RecepLbl.Name = "RecepLbl";
-            this.RecepLbl.Size = new System.Drawing.Size(151, 29);
+            this.RecepLbl.Size = new System.Drawing.Size(115, 24);
             this.RecepLbl.TabIndex = 63;
             this.RecepLbl.Text = "Reciptionists";
             this.RecepLbl.Click += new System.EventHandler(this.RecepLbl_Click);
@@ -460,7 +465,7 @@
             this.MemberLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MemberLbl.Location = new System.Drawing.Point(113, 307);
             this.MemberLbl.Name = "MemberLbl";
-            this.MemberLbl.Size = new System.Drawing.Size(115, 29);
+            this.MemberLbl.Size = new System.Drawing.Size(90, 24);
             this.MemberLbl.TabIndex = 61;
             this.MemberLbl.Text = "Members";
             this.MemberLbl.Click += new System.EventHandler(this.MemberLbl_Click);
@@ -485,7 +490,7 @@
             this.CoachLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CoachLbl.Location = new System.Drawing.Point(101, 230);
             this.CoachLbl.Name = "CoachLbl";
-            this.CoachLbl.Size = new System.Drawing.Size(82, 29);
+            this.CoachLbl.Size = new System.Drawing.Size(65, 24);
             this.CoachLbl.TabIndex = 60;
             this.CoachLbl.Text = "Coach";
             this.CoachLbl.Click += new System.EventHandler(this.CoachLbl_Click);
@@ -509,7 +514,7 @@
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label9.Location = new System.Drawing.Point(107, 258);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 25);
+            this.label9.Size = new System.Drawing.Size(0, 20);
             this.label9.TabIndex = 70;
             // 
             // label14
@@ -519,7 +524,7 @@
             this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label14.Location = new System.Drawing.Point(89, 283);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(0, 25);
+            this.label14.Size = new System.Drawing.Size(0, 20);
             this.label14.TabIndex = 59;
             // 
             // panel5
@@ -581,7 +586,7 @@
             this.label11.Location = new System.Drawing.Point(1128, 137);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(124, 25);
+            this.label11.Size = new System.Drawing.Size(99, 20);
             this.label11.TabIndex = 51;
             this.label11.Text = "MemberShip";
             // 
@@ -591,7 +596,7 @@
             this.MShipCb.Location = new System.Drawing.Point(1132, 165);
             this.MShipCb.Margin = new System.Windows.Forms.Padding(4);
             this.MShipCb.Name = "MShipCb";
-            this.MShipCb.Size = new System.Drawing.Size(138, 33);
+            this.MShipCb.Size = new System.Drawing.Size(138, 28);
             this.MShipCb.TabIndex = 50;
             // 
             // JDateTb
@@ -599,7 +604,7 @@
             this.JDateTb.Location = new System.Drawing.Point(896, 168);
             this.JDateTb.Margin = new System.Windows.Forms.Padding(4);
             this.JDateTb.Name = "JDateTb";
-            this.JDateTb.Size = new System.Drawing.Size(211, 30);
+            this.JDateTb.Size = new System.Drawing.Size(211, 26);
             this.JDateTb.TabIndex = 49;
             // 
             // label10
@@ -610,7 +615,7 @@
             this.label10.Location = new System.Drawing.Point(690, 246);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 25);
+            this.label10.Size = new System.Drawing.Size(56, 20);
             this.label10.TabIndex = 48;
             this.label10.Text = "Status";
             // 
@@ -620,7 +625,7 @@
             this.CoachCb.Location = new System.Drawing.Point(910, 281);
             this.CoachCb.Margin = new System.Windows.Forms.Padding(4);
             this.CoachCb.Name = "CoachCb";
-            this.CoachCb.Size = new System.Drawing.Size(197, 33);
+            this.CoachCb.Size = new System.Drawing.Size(197, 28);
             this.CoachCb.TabIndex = 47;
             // 
             // StatusCb
@@ -633,7 +638,7 @@
             this.StatusCb.Location = new System.Drawing.Point(694, 283);
             this.StatusCb.Margin = new System.Windows.Forms.Padding(4);
             this.StatusCb.Name = "StatusCb";
-            this.StatusCb.Size = new System.Drawing.Size(197, 33);
+            this.StatusCb.Size = new System.Drawing.Size(197, 28);
             this.StatusCb.TabIndex = 46;
             // 
             // TimingCb
@@ -651,7 +656,7 @@
             this.TimingCb.Location = new System.Drawing.Point(466, 283);
             this.TimingCb.Margin = new System.Windows.Forms.Padding(4);
             this.TimingCb.Name = "TimingCb";
-            this.TimingCb.Size = new System.Drawing.Size(197, 33);
+            this.TimingCb.Size = new System.Drawing.Size(197, 28);
             this.TimingCb.TabIndex = 45;
             // 
             // label8
@@ -662,7 +667,7 @@
             this.label8.Location = new System.Drawing.Point(906, 246);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 25);
+            this.label8.Size = new System.Drawing.Size(55, 20);
             this.label8.TabIndex = 44;
             this.label8.Text = "Coach";
             // 
@@ -675,13 +680,39 @@
             this.label13.Location = new System.Drawing.Point(613, 420);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(190, 32);
+            this.label13.Size = new System.Drawing.Size(149, 26);
             this.label13.TabIndex = 22;
             this.label13.Text = " Members List";
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox7.Location = new System.Drawing.Point(50, 638);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 77;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // TrackerLbl
+            // 
+            this.TrackerLbl.AutoSize = true;
+            this.TrackerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.TrackerLbl.ForeColor = System.Drawing.Color.Black;
+            this.TrackerLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TrackerLbl.Location = new System.Drawing.Point(102, 652);
+            this.TrackerLbl.Name = "TrackerLbl";
+            this.TrackerLbl.Size = new System.Drawing.Size(107, 24);
+            this.TrackerLbl.TabIndex = 76;
+            this.TrackerLbl.Text = "Attendence";
+            this.TrackerLbl.Click += new System.EventHandler(this.TrackerLbl_Click);
+            // 
             // Members
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1657, 878);
@@ -706,6 +737,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -756,5 +788,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox MShipCb;
         private System.Windows.Forms.Label LabelMsg1;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label TrackerLbl;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Dashboard.DataCon;
+using Dashboard.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -247,7 +248,11 @@ namespace Dashboard
             this.Hide();
         }
 
-       
-
+        private void TrackerLbl_Click(object sender, EventArgs e)
+        {
+            WorkoutTracker tracker = new WorkoutTracker();
+            tracker.Show();
+            this.Hide();
+        }
     }
 }

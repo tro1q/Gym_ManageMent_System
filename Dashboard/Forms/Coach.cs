@@ -1,4 +1,5 @@
 ﻿using Dashboard.DataCon;
+using Dashboard.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -228,7 +229,7 @@ namespace Dashboard
 
         }
 
-        string role = Login.UserRole;/////////////
+        string role = Login.UserRole;
         private void CoachLabel_Click(object sender, EventArgs e)
         {
             if (role == "Coach")
@@ -243,11 +244,7 @@ namespace Dashboard
 
         private void MemberLbl_Click_1(object sender, EventArgs e)
         {
-            //if (role == "Coach" || role == "Receptionist")
-            //{
-            //    MessageBox.Show("Access Denied");
-            //    return;
-            //}
+           
             Members Obj = new Members();
             Obj.Show();
             this.Hide();
@@ -294,6 +291,18 @@ namespace Dashboard
             Login obj = new Login();
             obj.Show();
             this.Hide();
+        }
+
+        private void TrackerLbl_Click(object sender, EventArgs e)
+        {
+            WorkoutTracker tracker = new WorkoutTracker();
+            tracker.Show();
+            this.Hide();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

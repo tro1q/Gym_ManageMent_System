@@ -1,4 +1,5 @@
 ﻿using Dashboard.DataCon;
+using Dashboard.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -285,6 +286,18 @@ namespace Dashboard
             await Task.Delay(2000);
 
             LabelMsg1.Visible = false;
+        }
+
+        private void TrackerLbl_Click(object sender, EventArgs e)
+        {
+            WorkoutTracker tracker = new WorkoutTracker();
+            tracker.Show();
+            this.Hide();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

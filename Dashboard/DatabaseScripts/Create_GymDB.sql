@@ -113,3 +113,17 @@ BEGIN
     VALUES ('admin', '123');
 END
 
+-- Create TrackerTbl if it doesn't exist
+IF OBJECT_ID('dbo.TrackerTbl', 'U') IS NULL
+BEGIN
+    CREATE TABLE [dbo].[TrackerTbl] (
+        [SessionId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+        [MemberId] INT NOT NULL,
+        [StartTime] DATETIME NOT NULL,
+        [EndTime] DATETIME NULL,
+        [Status] VARCHAR(20) NOT NULL,
+        [Duration] INT NOT NULL,
+        CONSTRAINT [FK5] FOREIGN KEY ([MemberId]) REFERENCES [dbo].[MembersTbl]([MId])
+    );
+END
+GO

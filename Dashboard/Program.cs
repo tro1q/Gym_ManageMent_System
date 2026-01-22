@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dashboard.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,6 +31,10 @@ namespace Dashboard
             //Application.Run(obj);
             //Bill obj4 = new Bill();
             //Application.Run(obj4);
+
+            //WorkoutTracker obj5 = new WorkoutTracker();
+            //Application.Run(obj5);
+
         }
     }
 }
