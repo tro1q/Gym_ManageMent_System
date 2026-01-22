@@ -85,6 +85,7 @@
             this.LogOut.Size = new System.Drawing.Size(89, 24);
             this.LogOut.TabIndex = 80;
             this.LogOut.Text = "Logout";
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
             // 
             // BillLbl
             // 
@@ -97,6 +98,7 @@
             this.BillLbl.Size = new System.Drawing.Size(60, 24);
             this.BillLbl.TabIndex = 79;
             this.BillLbl.Text = "Billing";
+            this.BillLbl.Click += new System.EventHandler(this.BillLbl_Click);
             // 
             // MemberShipLbl
             // 
@@ -109,6 +111,7 @@
             this.MemberShipLbl.Size = new System.Drawing.Size(116, 24);
             this.MemberShipLbl.TabIndex = 77;
             this.MemberShipLbl.Text = "Membership";
+            this.MemberShipLbl.Click += new System.EventHandler(this.MemberShipLbl_Click);
             // 
             // RecepLbl
             // 
@@ -121,6 +124,7 @@
             this.RecepLbl.Size = new System.Drawing.Size(115, 24);
             this.RecepLbl.TabIndex = 78;
             this.RecepLbl.Text = "Reciptionists";
+            this.RecepLbl.Click += new System.EventHandler(this.RecepLbl_Click);
             // 
             // MemberLbl
             // 
@@ -133,6 +137,7 @@
             this.MemberLbl.Size = new System.Drawing.Size(90, 24);
             this.MemberLbl.TabIndex = 76;
             this.MemberLbl.Text = "Members";
+            this.MemberLbl.Click += new System.EventHandler(this.MemberLbl_Click);
             // 
             // CoachLbl
             // 
@@ -145,6 +150,7 @@
             this.CoachLbl.Size = new System.Drawing.Size(65, 24);
             this.CoachLbl.TabIndex = 75;
             this.CoachLbl.Text = "Coach";
+            this.CoachLbl.Click += new System.EventHandler(this.CoachLbl_Click);
             // 
             // panel3
             // 
