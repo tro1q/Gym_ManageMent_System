@@ -123,11 +123,17 @@ namespace Dashboard.Forms
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            // Get all active sessions
-            DataTable dt = Con.GetData("SELECT t.SessionId, t.MemberId, t.StartTime, t.Duration, m.MName " +
-                                       "FROM TrackerTbl t " +
-                                       "JOIN MembersTbl m ON t.MemberId = m.MId " +
-                                       "WHERE t.Status='Active'");
+            // Get ONLY active sessions
+            DataTable dt = Con.GetData(@"
+        SELECT 
+            t.SessionId,
+            t.StartTime,
+            t.Duration,
+            m.MName
+        FROM TrackerTbl t
+        JOIN MembersTbl m ON t.MemberId = m.MId
+        WHERE t.Status = 'Active'
+    ");
 
             foreach (DataRow row in dt.Rows)
             {
@@ -136,20 +142,34 @@ namespace Dashboard.Forms
                 DateTime startTime = Convert.ToDateTime(row["StartTime"]);
                 int durationHours = Convert.ToInt32(row["Duration"]);
 
-                DateTime endTime = startTime.AddHours(durationHours); // calculate session end
+                DateTime endTime = startTime.AddHours(durationHours);
+
                 if (DateTime.Now >= endTime)
                 {
-                    // Show message
-                    MessageBox.Show($"Member {memberName} has completed their workout time!", "Workout Finished");
+                    // 🔹 FIRST update database
+                    string updateQuery = $@"
+                UPDATE TrackerTbl
+                SET EndTime = '{DateTime.Now}',
+                    Status = 'Finished'
+                WHERE SessionId = {sessionId}
+                  AND Status = 'Active'";
 
-                    // Update TrackerTbl
-                    string query = $"UPDATE TrackerTbl SET EndTime='{DateTime.Now}', Status='Finished' WHERE SessionId={sessionId}";
-                    Con.setData(query);
+                    Con.setData(updateQuery);
 
-                    LoadTrackerGrid(); // refresh grid
+                    // 🔹 THEN show message ONCE
+                    MessageBox.Show(
+                        $"Workout time completed!\n\nMember: {memberName}",
+                        "Session Finished",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
                 }
             }
+
+            
+            LoadTrackerGrid();
         }
+
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {

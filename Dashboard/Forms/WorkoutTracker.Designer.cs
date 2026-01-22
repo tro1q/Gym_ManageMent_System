@@ -187,9 +187,9 @@
             this.panel2.Controls.Add(this.MemberLbl);
             this.panel2.Controls.Add(this.MemberShipLbl);
             this.panel2.Controls.Add(this.RecepLbl);
-            this.panel2.Location = new System.Drawing.Point(59, 5);
+            this.panel2.Location = new System.Drawing.Point(74, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(247, 730);
+            this.panel2.Size = new System.Drawing.Size(245, 730);
             this.panel2.TabIndex = 10;
             // 
             // pictureBox3
@@ -268,7 +268,7 @@
             // 
             this.SearchTb.Location = new System.Drawing.Point(28, 49);
             this.SearchTb.Name = "SearchTb";
-            this.SearchTb.Size = new System.Drawing.Size(238, 20);
+            this.SearchTb.Size = new System.Drawing.Size(249, 20);
             this.SearchTb.TabIndex = 0;
             this.SearchTb.TextChanged += new System.EventHandler(this.SearchTb_TextChanged);
             // 

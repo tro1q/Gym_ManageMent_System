@@ -63,6 +63,7 @@ namespace Dashboard
                     Con.setData(Query);
                     ShowCoach();
                     MessageBox.Show("Coach Added Successfully");
+                    ClearFields();
                 }
 
             }
@@ -123,12 +124,7 @@ namespace Dashboard
                                           "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        //string CName = ChNameTb.Text;
-                        //string Gender = GenCb.SelectedItem.ToString();
-                        //string Phone = PhoneTb.Text;
-                        //int experience = Convert.ToInt32(ExpTb.Text);
-                        //string Add = AddTb.Text;
-                        //string Password = PassTb.Text;
+                       
                         string Query = "delete from CoachsTbl where CId = {0}";
                         Query = string.Format(Query, key);
                         Con.setData(Query);
