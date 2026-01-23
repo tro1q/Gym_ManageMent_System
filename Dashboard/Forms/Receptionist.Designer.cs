@@ -54,6 +54,8 @@
             this.RecepNameTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.TrackerLbl = new System.Windows.Forms.Label();
             this.LogOut = new System.Windows.Forms.Label();
             this.BillLbl = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -70,12 +72,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.TrackerLbl = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RecepList)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -83,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -286,6 +286,20 @@
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.panel2.Name = "panel2";
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
+            resources.ApplyResources(this.pictureBox7, "pictureBox7");
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.TabStop = false;
+            // 
+            // TrackerLbl
+            // 
+            resources.ApplyResources(this.TrackerLbl, "TrackerLbl");
+            this.TrackerLbl.ForeColor = System.Drawing.Color.Black;
+            this.TrackerLbl.Name = "TrackerLbl";
+            this.TrackerLbl.Click += new System.EventHandler(this.TrackerLbl_Click);
+            // 
             // LogOut
             // 
             resources.ApplyResources(this.LogOut, "LogOut");
@@ -395,20 +409,6 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
-            resources.ApplyResources(this.pictureBox7, "pictureBox7");
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.TabStop = false;
-            // 
-            // TrackerLbl
-            // 
-            resources.ApplyResources(this.TrackerLbl, "TrackerLbl");
-            this.TrackerLbl.ForeColor = System.Drawing.Color.Black;
-            this.TrackerLbl.Name = "TrackerLbl";
-            this.TrackerLbl.Click += new System.EventHandler(this.TrackerLbl_Click);
-            // 
             // Receptionist
             // 
             resources.ApplyResources(this, "$this");
@@ -423,6 +423,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.RecepList)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -430,7 +431,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }

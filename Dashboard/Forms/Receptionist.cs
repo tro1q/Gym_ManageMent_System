@@ -163,7 +163,7 @@ namespace Dashboard
         int key = 0;
         private void RecepList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || RecepList.Rows[e.RowIndex].IsNewRow) //Empty row error handling
+            if (e.RowIndex < 0 || RecepList.Rows[e.RowIndex].IsNewRow) 
                 return;
 
             if (e.RowIndex >= 0)

@@ -83,7 +83,7 @@ namespace Dashboard
         int key = 0;
         private void CoachList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || CoachList.Rows[e.RowIndex].IsNewRow) //Empty row error handling
+            if (e.RowIndex < 0 || CoachList.Rows[e.RowIndex].IsNewRow) 
                 return;
 
             if (e.RowIndex >= 0)

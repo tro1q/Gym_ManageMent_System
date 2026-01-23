@@ -83,7 +83,6 @@ namespace Dashboard
                         }
                     }
 
-                    // 🔹 No role selected
                     else
                     {
                         MessageBox.Show("Please select a login role");

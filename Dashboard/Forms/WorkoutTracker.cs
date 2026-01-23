@@ -44,7 +44,7 @@ namespace Dashboard.Forms
 
             int memberId = Convert.ToInt32(MembersDGV.SelectedRows[0].Cells["MId"].Value);
 
-            // Check if already active
+           
             DataTable checkActive = Con.GetData($"SELECT * FROM TrackerTbl WHERE MemberId={memberId} AND Status='Active'");
             if (checkActive.Rows.Count > 0)
             {
@@ -52,11 +52,11 @@ namespace Dashboard.Forms
                 return;
             }
 
-            // ✅ Get package duration from correct column
+           
             DataTable dt = Con.GetData($"SELECT MDuration FROM MembershipsTbl WHERE MShipId=(SELECT MMembership FROM MembersTbl WHERE MId={memberId})");
             int duration = Convert.ToInt32(dt.Rows[0][0]);
 
-            // Insert into TrackerTbl
+            
             string query = $@"
         INSERT INTO TrackerTbl (MemberId, StartTime, Status, Duration)
         VALUES ({memberId}, '{DateTime.Now}', 'Active', {duration})";
@@ -75,7 +75,7 @@ namespace Dashboard.Forms
                 return;
             }
 
-            // Get session id
+           
             DataGridViewRow row = MembersDGV.SelectedRows[0];
             if (row.Cells["SessionId"].Value == DBNull.Value)
             {
@@ -97,20 +97,9 @@ namespace Dashboard.Forms
 
         private void LoadTrackerGrid(string search = "")
         {
-            string query = @"
-    SELECT 
-        m.MId,
-        m.MName,
-        ms.MName AS PackageName,
-        t.SessionId,
-        t.StartTime,
-        ISNULL(t.Status, 'Inactive') AS Status,
-        t.Duration
-    FROM MembersTbl m
-    JOIN MembershipsTbl ms ON m.MMembership = ms.MShipId
-    LEFT JOIN TrackerTbl t 
-        ON m.MId = t.MemberId AND t.Status='Active'
-    WHERE m.IsDeleted = 0"; // Only show non-deleted members
+            string query = @" SELECT  m.MId, m.MName, ms.MName AS PackageName, t.SessionId, t.StartTime, ISNULL(t.Status, 'Inactive') AS Status,
+        t.Duration FROM MembersTbl m JOIN MembershipsTbl ms ON m.MMembership = ms.MShipId LEFT JOIN TrackerTbl t 
+        ON m.MId = t.MemberId AND t.Status='Active' WHERE m.IsDeleted = 0"; 
 
 
             if (!string.IsNullOrWhiteSpace(search))
@@ -130,15 +119,12 @@ namespace Dashboard.Forms
 
             try
             {
-                // Stop the timer so messagebox doesn't repeat
+              
                 timer1.Stop();
 
-                // Get all active workout sessions
-                DataTable dt = Con.GetData(@"
-            SELECT t.SessionId, t.MemberId, t.StartTime, t.Duration, m.MName
-            FROM TrackerTbl t
-            JOIN MembersTbl m ON t.MemberId = m.MId
-            WHERE t.Status='Active'");
+               
+                DataTable dt = Con.GetData(@" SELECT t.SessionId, t.MemberId, t.StartTime, t.Duration, m.MName
+           FROM TrackerTbl t JOIN MembersTbl m ON t.MemberId = m.MId WHERE t.Status='Active'");
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -147,29 +133,29 @@ namespace Dashboard.Forms
                     DateTime startTime = Convert.ToDateTime(row["StartTime"]);
                     int durationHours = Convert.ToInt32(row["Duration"]);
 
-                    DateTime endTime = startTime.AddHours(durationHours); // Calculate end time
+                    DateTime endTime = startTime.AddHours(durationHours); 
 
                     if (DateTime.Now >= endTime)
                     {
-                        // Update database first
+                        
                         string query = $"UPDATE TrackerTbl SET EndTime='{DateTime.Now}', Status='Finished' WHERE SessionId={sessionId}";
                         Con.setData(query);
 
-                        // Show message ONCE
+                       
                         MessageBox.Show($"Member {memberName} has completed their workout time!", "Workout Finished");
 
-                        // Refresh grid
+                        
                         LoadTrackerGrid();
                     }
                 }
 
-                // Start timer again
+               
                 timer1.Start();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                timer1.Start(); // make sure timer restarts even if error occurs
+                timer1.Start(); 
             }
 
         }

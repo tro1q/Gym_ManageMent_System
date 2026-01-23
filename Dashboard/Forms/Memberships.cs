@@ -14,7 +14,7 @@ namespace Dashboard
 {
     public partial class Memberships : Form
     {
-        DataconFun Con; //Funtions Con
+        DataconFun Con; 
         public Memberships()
         {
             InitializeComponent();
@@ -76,7 +76,7 @@ namespace Dashboard
         private void MShipList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.RowIndex < 0 || MShipList.Rows[e.RowIndex].IsNewRow) //Empty row error handling
+            if (e.RowIndex < 0 || MShipList.Rows[e.RowIndex].IsNewRow) 
                 return;
 
             if (e.RowIndex >= 0)
@@ -190,11 +190,7 @@ namespace Dashboard
 
         private void MemberLbl_Click(object sender, EventArgs e)
         {
-            //if (role == "Coach" || role == "Receptionist")
-            //{
-            //    MessageBox.Show("Access Denied");
-            //    return;
-            //}
+            
             Members members = new Members();
             members.Show();
             this.Hide();
