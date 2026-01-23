@@ -98,19 +98,20 @@ namespace Dashboard.Forms
         private void LoadTrackerGrid(string search = "")
         {
             string query = @"
-                SELECT 
-                    m.MId,
-                    m.MName,
-                    ms.MName AS PackageName,
-                    t.SessionId,
-                    t.StartTime,
-                    ISNULL(t.Status, 'Inactive') AS Status,
-                    t.Duration
-                FROM MembersTbl m
-                JOIN MembershipsTbl ms ON m.MMembership = ms.MShipId
-                LEFT JOIN TrackerTbl t 
-                    ON m.MId = t.MemberId AND t.Status='Active'
-                WHERE 1=1"; // Allows appending search
+    SELECT 
+        m.MId,
+        m.MName,
+        ms.MName AS PackageName,
+        t.SessionId,
+        t.StartTime,
+        ISNULL(t.Status, 'Inactive') AS Status,
+        t.Duration
+    FROM MembersTbl m
+    JOIN MembershipsTbl ms ON m.MMembership = ms.MShipId
+    LEFT JOIN TrackerTbl t 
+        ON m.MId = t.MemberId AND t.Status='Active'
+    WHERE m.IsDeleted = 0"; // Only show non-deleted members
+
 
             if (!string.IsNullOrWhiteSpace(search))
             {
@@ -129,6 +130,9 @@ namespace Dashboard.Forms
 
             try
             {
+                // Stop the timer so messagebox doesn't repeat
+                timer1.Stop();
+
                 // Get all active workout sessions
                 DataTable dt = Con.GetData(@"
             SELECT t.SessionId, t.MemberId, t.StartTime, t.Duration, m.MName
@@ -145,25 +149,29 @@ namespace Dashboard.Forms
 
                     DateTime endTime = startTime.AddHours(durationHours); // Calculate end time
 
-                    // If the workout duration is over
                     if (DateTime.Now >= endTime)
                     {
-                        // Show message
-                        MessageBox.Show($"Member {memberName} has completed their workout time!", "Workout Finished");
-
-                        // Update TrackerTbl to mark session as finished
+                        // Update database first
                         string query = $"UPDATE TrackerTbl SET EndTime='{DateTime.Now}', Status='Finished' WHERE SessionId={sessionId}";
                         Con.setData(query);
 
-                        // Refresh the DataGridView
+                        // Show message ONCE
+                        MessageBox.Show($"Member {memberName} has completed their workout time!", "Workout Finished");
+
+                        // Refresh grid
                         LoadTrackerGrid();
                     }
                 }
+
+                // Start timer again
+                timer1.Start();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                timer1.Start(); // make sure timer restarts even if error occurs
             }
+
         }
 
         private void CoachLbl_Click(object sender, EventArgs e)

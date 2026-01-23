@@ -26,8 +26,12 @@ namespace Dashboard
 
         private void ShowMembers()
         {
-            string Query = "Select * from MembersTbl";
+           
+            string Query = "SELECT* FROM MembersTbl WHERE IsDeleted = 0";
             MembersList.DataSource = Con.GetData(Query);
+            if (MembersList.Columns["IsDeleted"] != null)
+                MembersList.Columns["IsDeleted"].Visible = false;
+
         }
 
         private void Members_Load(object sender, EventArgs e)
@@ -50,11 +54,7 @@ namespace Dashboard
 
         private void MemberLbl_Click(object sender, EventArgs e)
         {
-            //if (role == "Coach" || role == "Receptionist")
-            //{
-            //    MessageBox.Show("Access Denied");
-            //    return;
-            //}
+           
             Members members = new Members();
             members.Show();
             this.Hide();
@@ -144,7 +144,11 @@ namespace Dashboard
                     string Timing = TimingCb.SelectedItem.ToString();
                     string Status = StatusCb.SelectedItem.ToString();
 
-                    string Query = "insert into MembersTbl values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')";
+                   
+                    string Query = @" INSERT INTO MembersTbl 
+                 (MName, MGen, MDOB, MJDate, MMembership, MCoach, MPhone, MTiming, MStatus)  VALUES 
+                 ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')";
+
                     Query = string.Format(Query, MName,Gender,DOB,MJDate,MShip,Coach,Phone,Timing,Status);
                     Con.setData(Query);
                   ShowMembers();
@@ -177,7 +181,7 @@ namespace Dashboard
 
         private void MembersList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || MembersList.Rows[e.RowIndex].IsNewRow) //Empty row error handling
+            if (e.RowIndex < 0 || MembersList.Rows[e.RowIndex].IsNewRow) 
                 return;
 
             if (e.RowIndex >= 0)
@@ -260,7 +264,8 @@ namespace Dashboard
                     if (result == DialogResult.Yes)
                     {
 
-                        string Query = "delete from MembersTbl where MId = {0}";
+                     
+                        string Query = $"UPDATE MembersTbl SET IsDeleted = 1 WHERE MId = {key}";
                         Query = string.Format(Query, key);
                         Con.setData(Query);
                         ShowMembers();

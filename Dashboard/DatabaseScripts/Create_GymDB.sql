@@ -52,7 +52,7 @@ GO
 /* =========================
    Members Table
    ========================= */
-IF OBJECT_ID('dbo.MembersTbl', 'U') IS NULL
+   IF OBJECT_ID('dbo.MembersTbl', 'U') IS NULL
 BEGIN
     CREATE TABLE [dbo].[MembersTbl]
     (
@@ -66,12 +66,9 @@ BEGIN
         [MPhone] VARCHAR(20) NOT NULL,
         [MTiming] VARCHAR(20) NOT NULL,
         [MStatus] VARCHAR(20) NOT NULL,
-
-        CONSTRAINT FK1 
-            FOREIGN KEY (MMembership) REFERENCES MembershipsTbl(MShipid),
-
-        CONSTRAINT FK2 
-            FOREIGN KEY (MCoach) REFERENCES CoachsTbl(CId)
+        [IsDeleted] BIT NOT NULL DEFAULT 0,
+        CONSTRAINT FK1 FOREIGN KEY (MMembership) REFERENCES MembershipsTbl(MShipid),
+        CONSTRAINT FK2 FOREIGN KEY (MCoach) REFERENCES CoachsTbl(CId)
     );
 END
 GO
@@ -123,7 +120,7 @@ BEGIN
         [EndTime] DATETIME NULL,
         [Status] VARCHAR(20) NOT NULL,
         [Duration] INT NOT NULL,
-        CONSTRAINT [FK5] FOREIGN KEY ([MemberId]) REFERENCES [dbo].[MembersTbl]([MId])
+        CONSTRAINT FK5 FOREIGN KEY ([MemberId]) REFERENCES [dbo].[MembersTbl]([MId]) ON DELETE CASCADE
     );
 END
 GO

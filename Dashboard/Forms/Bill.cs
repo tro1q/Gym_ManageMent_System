@@ -53,11 +53,7 @@ namespace Dashboard
 
         private void MemberLbl_Click(object sender, EventArgs e)
         {
-            //if (role == "Coach" || role == "Receptionist")
-            //{
-            //    MessageBox.Show("Access Denied");
-            //    return;
-            //}
+           
             Members members = new Members();
             members.Show();
             this.Hide();
@@ -102,7 +98,7 @@ namespace Dashboard
 
         private void GetMembers()
         {
-            string Query = "select * from MembersTbl";
+            string Query = "select * from MembersTbl WHERE IsDeleted = 0";
             MemberCb.DisplayMember = Con.GetData(Query).Columns["MName"].ToString();
             MemberCb.ValueMember = Con.GetData(Query).Columns["MId"].ToString();
             MemberCb.DataSource = Con.GetData(Query);
@@ -187,13 +183,9 @@ namespace Dashboard
             this.Hide();
         }
         private PrintDocument printDocument = new PrintDocument();
-        private string billContent = ""; 
+        private string billContent = "";
 
-        private DataTable GetMemberDetails(int memberId)
-        {
-            string query = $"SELECT * FROM MembersTbl WHERE MId = {memberId}";
-            return Con.GetData(query);
-        }
+       
 
 
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
@@ -239,6 +231,7 @@ namespace Dashboard
             PrintPreviewDialog previewDialog = new PrintPreviewDialog();
             previewDialog.Document = printDocument;
             previewDialog.ShowDialog();
+            BillDone = false;
             ClearFields();
         }
 
