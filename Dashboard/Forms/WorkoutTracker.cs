@@ -21,7 +21,7 @@ namespace Dashboard.Forms
             LoadTrackerGrid();
 
             timer1.Interval = 1000; // check every 1 second
-            timer1.Tick += Timer1_Tick;
+            timer1.Tick += timer1_Tick_1;
             timer1.Start();
         }
 
@@ -121,54 +121,7 @@ namespace Dashboard.Forms
         }
 
 
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-            // Get ONLY active sessions
-            DataTable dt = Con.GetData(@"
-        SELECT 
-            t.SessionId,
-            t.StartTime,
-            t.Duration,
-            m.MName
-        FROM TrackerTbl t
-        JOIN MembersTbl m ON t.MemberId = m.MId
-        WHERE t.Status = 'Active'
-    ");
-
-            foreach (DataRow row in dt.Rows)
-            {
-                int sessionId = Convert.ToInt32(row["SessionId"]);
-                string memberName = row["MName"].ToString();
-                DateTime startTime = Convert.ToDateTime(row["StartTime"]);
-                int durationHours = Convert.ToInt32(row["Duration"]);
-
-                DateTime endTime = startTime.AddHours(durationHours);
-
-                if (DateTime.Now >= endTime)
-                {
-                    // 🔹 FIRST update database
-                    string updateQuery = $@"
-                UPDATE TrackerTbl
-                SET EndTime = '{DateTime.Now}',
-                    Status = 'Finished'
-                WHERE SessionId = {sessionId}
-                  AND Status = 'Active'";
-
-                    Con.setData(updateQuery);
-
-                    // 🔹 THEN show message ONCE
-                    MessageBox.Show(
-                        $"Workout time completed!\n\nMember: {memberName}",
-                        "Session Finished",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                    );
-                }
-            }
-
-            
-            LoadTrackerGrid();
-        }
+ 
 
 
         private void timer1_Tick_1(object sender, EventArgs e)

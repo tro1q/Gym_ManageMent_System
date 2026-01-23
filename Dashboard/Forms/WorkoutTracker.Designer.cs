@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LogOut = new System.Windows.Forms.Label();
             this.BillLbl = new System.Windows.Forms.Label();
@@ -46,12 +48,12 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
-            this.SearchTb = new System.Windows.Forms.TextBox();
-            this.SearchLbl = new System.Windows.Forms.Label();
+            this.InactiveBtn = new System.Windows.Forms.Button();
+            this.ActiveBtn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.MembersDGV = new System.Windows.Forms.DataGridView();
-            this.ActiveBtn = new System.Windows.Forms.Button();
-            this.InactiveBtn = new System.Windows.Forms.Button();
+            this.SearchLbl = new System.Windows.Forms.Label();
+            this.SearchTb = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -242,6 +244,7 @@
             // 
             // pictureBox7
             // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Turquoise;
             this.pictureBox7.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -254,6 +257,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.Linen;
             this.panel4.Controls.Add(this.InactiveBtn);
             this.panel4.Controls.Add(this.ActiveBtn);
             this.panel4.Controls.Add(this.panel5);
@@ -264,22 +268,25 @@
             this.panel4.Size = new System.Drawing.Size(986, 713);
             this.panel4.TabIndex = 11;
             // 
-            // SearchTb
+            // InactiveBtn
             // 
-            this.SearchTb.Location = new System.Drawing.Point(28, 49);
-            this.SearchTb.Name = "SearchTb";
-            this.SearchTb.Size = new System.Drawing.Size(249, 20);
-            this.SearchTb.TabIndex = 0;
-            this.SearchTb.TextChanged += new System.EventHandler(this.SearchTb_TextChanged);
+            this.InactiveBtn.Location = new System.Drawing.Point(683, 117);
+            this.InactiveBtn.Name = "InactiveBtn";
+            this.InactiveBtn.Size = new System.Drawing.Size(119, 36);
+            this.InactiveBtn.TabIndex = 4;
+            this.InactiveBtn.Text = "Inactive";
+            this.InactiveBtn.UseVisualStyleBackColor = true;
+            this.InactiveBtn.Click += new System.EventHandler(this.InactiveBtn_Click);
             // 
-            // SearchLbl
+            // ActiveBtn
             // 
-            this.SearchLbl.AutoSize = true;
-            this.SearchLbl.Location = new System.Drawing.Point(25, 33);
-            this.SearchLbl.Name = "SearchLbl";
-            this.SearchLbl.Size = new System.Drawing.Size(81, 13);
-            this.SearchLbl.TabIndex = 1;
-            this.SearchLbl.Text = "Search member";
+            this.ActiveBtn.Location = new System.Drawing.Point(683, 40);
+            this.ActiveBtn.Name = "ActiveBtn";
+            this.ActiveBtn.Size = new System.Drawing.Size(119, 36);
+            this.ActiveBtn.TabIndex = 3;
+            this.ActiveBtn.Text = "Active";
+            this.ActiveBtn.UseVisualStyleBackColor = true;
+            this.ActiveBtn.Click += new System.EventHandler(this.ActiveBtn_Click);
             // 
             // panel5
             // 
@@ -292,34 +299,48 @@
             // MembersDGV
             // 
             this.MembersDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MembersDGV.BackgroundColor = System.Drawing.Color.Linen;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MembersDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.MembersDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MembersDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MembersDGV.Location = new System.Drawing.Point(0, 0);
             this.MembersDGV.Name = "MembersDGV";
             this.MembersDGV.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Linen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MembersDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.MembersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.MembersDGV.Size = new System.Drawing.Size(958, 475);
             this.MembersDGV.TabIndex = 0;
             // 
-            // ActiveBtn
+            // SearchLbl
             // 
-            this.ActiveBtn.Location = new System.Drawing.Point(683, 40);
-            this.ActiveBtn.Name = "ActiveBtn";
-            this.ActiveBtn.Size = new System.Drawing.Size(119, 36);
-            this.ActiveBtn.TabIndex = 3;
-            this.ActiveBtn.Text = "Active";
-            this.ActiveBtn.UseVisualStyleBackColor = true;
-            this.ActiveBtn.Click += new System.EventHandler(this.ActiveBtn_Click);
+            this.SearchLbl.AutoSize = true;
+            this.SearchLbl.Location = new System.Drawing.Point(25, 33);
+            this.SearchLbl.Name = "SearchLbl";
+            this.SearchLbl.Size = new System.Drawing.Size(81, 13);
+            this.SearchLbl.TabIndex = 1;
+            this.SearchLbl.Text = "Search member";
             // 
-            // InactiveBtn
+            // SearchTb
             // 
-            this.InactiveBtn.Location = new System.Drawing.Point(683, 117);
-            this.InactiveBtn.Name = "InactiveBtn";
-            this.InactiveBtn.Size = new System.Drawing.Size(119, 36);
-            this.InactiveBtn.TabIndex = 4;
-            this.InactiveBtn.Text = "Inactive";
-            this.InactiveBtn.UseVisualStyleBackColor = true;
-            this.InactiveBtn.Click += new System.EventHandler(this.InactiveBtn_Click);
+            this.SearchTb.Location = new System.Drawing.Point(28, 49);
+            this.SearchTb.Name = "SearchTb";
+            this.SearchTb.Size = new System.Drawing.Size(249, 20);
+            this.SearchTb.TabIndex = 0;
+            this.SearchTb.TextChanged += new System.EventHandler(this.SearchTb_TextChanged);
             // 
             // timer1
             // 
