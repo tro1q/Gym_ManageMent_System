@@ -98,6 +98,12 @@
     <Compile Include="Forms\Receptionist.Designer.cs">
       <DependentUpon>Receptionist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WorkoutTracker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Receptionist.resx">
       <DependentUpon>Receptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkoutTracker.resx">
       <DependentUpon>WorkoutTracker.cs</DependentUpon>
