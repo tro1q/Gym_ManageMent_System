@@ -20,7 +20,7 @@ namespace Dashboard.Forms
             Con = new DataconFun();
             LoadTrackerGrid();
 
-            timer1.Interval = 1000; // check every 1 second
+            timer1.Interval = 1000; 
             timer1.Tick += timer1_Tick_1;
             timer1.Start();
         }

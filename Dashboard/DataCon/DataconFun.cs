@@ -19,10 +19,7 @@ namespace Dashboard.DataCon
         private SqlDataAdapter sda;
 
         public DataconFun() {
-            //before 
-            //ConStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\OOP-2\\GymDB.mdf;" +
-            //     "Integrated Security=True";
-            //After
+           
             string ConStr =
                 ConfigurationManager.ConnectionStrings["GymDB"].ConnectionString;
 
@@ -46,13 +43,7 @@ namespace Dashboard.DataCon
             return cnt;
         }
 
-        //public DataTable GetData(string Query)
-        //{
-        //    dt = new DataTable();
-        //    sda = new SqlDataAdapter(Query, ConStr);
-        //    sda.Fill(dt);
-        //    return dt;
-        //}
+        
         public DataTable GetData(string Query)
         {
             dt = new DataTable();

@@ -1,13 +1,13 @@
-﻿-- Create the database
+﻿
 IF DB_ID('GymDB') IS NULL
     CREATE DATABASE GymDB;
 GO
 
--- Use the database
+
 USE GymDB;
 GO
 
--- Create the CoachsTbl table
+
 CREATE TABLE [dbo].[CoachsTbl] (
     [CId]         INT          IDENTITY (1, 1) NOT NULL,
     [CName]       VARCHAR (50) NOT NULL,
@@ -21,7 +21,6 @@ CREATE TABLE [dbo].[CoachsTbl] (
 );
 GO
 
--- Create MembershipsTbl if it does not exist
 IF OBJECT_ID('dbo.MembershipsTbl', 'U') IS NULL
 CREATE TABLE [dbo].[MembershipsTbl]
 (
@@ -33,7 +32,7 @@ CREATE TABLE [dbo].[MembershipsTbl]
 );
 GO
 
---Receptionist Table
+
 IF OBJECT_ID('dbo.ReceptionistTbl', 'U') IS NULL
 BEGIN
     CREATE TABLE [dbo].[ReceptionistTbl]
@@ -49,9 +48,7 @@ BEGIN
 END
 GO
 
-/* =========================
-   Members Table
-   ========================= */
+
    IF OBJECT_ID('dbo.MembersTbl', 'U') IS NULL
 BEGIN
     CREATE TABLE [dbo].[MembersTbl]
@@ -73,9 +70,7 @@ BEGIN
 END
 GO
 
-/* =========================
-   Finance / Billing Table
-   ========================= */
+
 IF OBJECT_ID('dbo.FinanceTbl', 'U') IS NULL
 BEGIN
     CREATE TABLE [dbo].[FinanceTbl]
@@ -110,7 +105,7 @@ BEGIN
     VALUES ('admin', '123');
 END
 
--- Create TrackerTbl if it doesn't exist
+
 IF OBJECT_ID('dbo.TrackerTbl', 'U') IS NULL
 BEGIN
     CREATE TABLE [dbo].[TrackerTbl] (
