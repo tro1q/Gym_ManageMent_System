@@ -98,13 +98,20 @@ namespace Dashboard
 
         private void GetMembers()
         {
-            string Query = "select * from MembersTbl WHERE IsDeleted = 0";
-            MemberCb.DisplayMember = Con.GetData(Query).Columns["MName"].ToString();
-            MemberCb.ValueMember = Con.GetData(Query).Columns["MId"].ToString();
-            MemberCb.DataSource = Con.GetData(Query);
+            //string Query = "select * from MembersTbl WHERE IsDeleted = 0";
+            //MemberCb.DisplayMember = Con.GetData(Query).Columns["MName"].ToString();
+            //MemberCb.ValueMember = Con.GetData(Query).Columns["MId"].ToString();
+            //MemberCb.DataSource = Con.GetData(Query);
+
+            DataTable dtMembers = Con.GetData("select * from MembersTbl WHERE IsDeleted = 0");
+            MemberCb.DisplayMember = "MName";
+            MemberCb.ValueMember = "MId";
+            MemberCb.DataSource = dtMembers;
+
+
         }
 
-      
+
         private void ClearFields()
         {
             AmountTb.Text = "";
@@ -127,7 +134,9 @@ namespace Dashboard
                     int Agent = Login.UserId;
                     string Member = MemberCb.SelectedValue.ToString();
                     string Period = PeriodTb.Value.Month.ToString() + "-" + PeriodTb.Value.Date.Year;
-                    string BDate = BDateTb.Value.Date.ToString();
+                    //string BDate = BDateTb.Value.Date.ToString();
+                    string BDate = BDateTb.Value.ToString("yyyy-MM-dd"); // safe SQL format
+
                     string Amount = AmountTb.Text;
                     string Query = "INSERT INTO FinanceTbl (Agent, Member, BPeriod, BDate, BAmount) " +
                                         "VALUES ({0}, {1}, '{2}', '{3}', {4})";
