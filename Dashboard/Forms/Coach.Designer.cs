@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.PassTb = new System.Windows.Forms.TextBox();
             this.AddTb = new System.Windows.Forms.TextBox();
@@ -40,6 +40,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.TrackerLbl = new System.Windows.Forms.Label();
             this.LogOut = new System.Windows.Forms.Label();
             this.BillLbl = new System.Windows.Forms.Label();
             this.MemberShipLbl = new System.Windows.Forms.Label();
@@ -72,11 +74,10 @@
             this.GenCb = new System.Windows.Forms.ComboBox();
             this.ChNameTb = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.TrackerLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -86,7 +87,6 @@
             this.panel5.SuspendLayout();
             this.CoachsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoachList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -138,7 +138,7 @@
             // panel9
             // 
             this.panel9.Location = new System.Drawing.Point(93, 469);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(150, 81);
             this.panel9.TabIndex = 32;
@@ -191,6 +191,32 @@
             this.panel2.Size = new System.Drawing.Size(200, 671);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox7.Location = new System.Drawing.Point(22, 524);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 77;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // TrackerLbl
+            // 
+            this.TrackerLbl.AutoSize = true;
+            this.TrackerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.TrackerLbl.ForeColor = System.Drawing.Color.Black;
+            this.TrackerLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TrackerLbl.Location = new System.Drawing.Point(74, 538);
+            this.TrackerLbl.Name = "TrackerLbl";
+            this.TrackerLbl.Size = new System.Drawing.Size(107, 24);
+            this.TrackerLbl.TabIndex = 76;
+            this.TrackerLbl.Text = "Attendence";
+            this.TrackerLbl.Click += new System.EventHandler(this.TrackerLbl_Click);
             // 
             // LogOut
             // 
@@ -418,32 +444,32 @@
             // 
             // CoachList
             // 
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Lime;
-            this.CoachList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
+            this.CoachList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.CoachList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CoachList.BackgroundColor = System.Drawing.Color.SeaShell;
             this.CoachList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CoachList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CoachList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.CoachList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CoachList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CoachList.GridColor = System.Drawing.Color.Sienna;
             this.CoachList.Location = new System.Drawing.Point(0, 0);
             this.CoachList.Name = "CoachList";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CoachList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CoachList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.CoachList.RowHeadersWidth = 51;
             this.CoachList.Size = new System.Drawing.Size(818, 292);
             this.CoachList.TabIndex = 0;
@@ -578,32 +604,6 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Manage Coach";
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox7.Location = new System.Drawing.Point(22, 524);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(46, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 77;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
-            // 
-            // TrackerLbl
-            // 
-            this.TrackerLbl.AutoSize = true;
-            this.TrackerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
-            this.TrackerLbl.ForeColor = System.Drawing.Color.Black;
-            this.TrackerLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TrackerLbl.Location = new System.Drawing.Point(74, 538);
-            this.TrackerLbl.Name = "TrackerLbl";
-            this.TrackerLbl.Size = new System.Drawing.Size(107, 24);
-            this.TrackerLbl.TabIndex = 76;
-            this.TrackerLbl.Text = "Attendence";
-            this.TrackerLbl.Click += new System.EventHandler(this.TrackerLbl_Click);
-            // 
             // Coach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,7 +611,7 @@
             this.ClientSize = new System.Drawing.Size(1243, 713);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Coach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Coach";
@@ -620,6 +620,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -630,7 +631,6 @@
             this.panel5.PerformLayout();
             this.CoachsList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CoachList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }

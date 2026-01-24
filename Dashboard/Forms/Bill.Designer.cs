@@ -48,6 +48,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.TrackerLbl = new System.Windows.Forms.Label();
             this.LogOut = new System.Windows.Forms.Label();
             this.BillLbl = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -65,12 +67,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.TrackerLbl = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.BillPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillingList)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -78,7 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -182,7 +182,7 @@
             this.BillingList.BackgroundColor = System.Drawing.Color.SeaShell;
             this.BillingList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -195,7 +195,7 @@
             this.BillingList.Location = new System.Drawing.Point(0, 0);
             this.BillingList.Name = "BillingList";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.GreenYellow;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -300,6 +300,31 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 671);
             this.panel2.TabIndex = 0;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox7.Location = new System.Drawing.Point(22, 549);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 79;
+            this.pictureBox7.TabStop = false;
+            // 
+            // TrackerLbl
+            // 
+            this.TrackerLbl.AutoSize = true;
+            this.TrackerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.TrackerLbl.ForeColor = System.Drawing.Color.Black;
+            this.TrackerLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TrackerLbl.Location = new System.Drawing.Point(74, 563);
+            this.TrackerLbl.Name = "TrackerLbl";
+            this.TrackerLbl.Size = new System.Drawing.Size(107, 24);
+            this.TrackerLbl.TabIndex = 78;
+            this.TrackerLbl.Text = "Attendence";
+            this.TrackerLbl.Click += new System.EventHandler(this.TrackerLbl_Click);
             // 
             // LogOut
             // 
@@ -495,31 +520,6 @@
             this.panel1.Size = new System.Drawing.Size(94, 693);
             this.panel1.TabIndex = 8;
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox7.Location = new System.Drawing.Point(22, 549);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(46, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 79;
-            this.pictureBox7.TabStop = false;
-            // 
-            // TrackerLbl
-            // 
-            this.TrackerLbl.AutoSize = true;
-            this.TrackerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
-            this.TrackerLbl.ForeColor = System.Drawing.Color.Black;
-            this.TrackerLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TrackerLbl.Location = new System.Drawing.Point(74, 563);
-            this.TrackerLbl.Name = "TrackerLbl";
-            this.TrackerLbl.Size = new System.Drawing.Size(107, 24);
-            this.TrackerLbl.TabIndex = 78;
-            this.TrackerLbl.Text = "Attendence";
-            this.TrackerLbl.Click += new System.EventHandler(this.TrackerLbl_Click);
-            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,6 +536,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BillingList)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -543,7 +544,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }

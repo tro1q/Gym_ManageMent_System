@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GoalTb = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -42,6 +42,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.MNameTb = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.TrackerLbl = new System.Windows.Forms.Label();
             this.LogOut = new System.Windows.Forms.Label();
             this.BillLbl = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -65,11 +67,10 @@
             this.LabelMsg = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.MShipList = new System.Windows.Forms.DataGridView();
-            this.TrackerLbl = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -78,7 +79,6 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MShipList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // GoalTb
@@ -205,6 +205,32 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 671);
             this.panel2.TabIndex = 0;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox7.Location = new System.Drawing.Point(17, 543);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 75;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // TrackerLbl
+            // 
+            this.TrackerLbl.AutoSize = true;
+            this.TrackerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.TrackerLbl.ForeColor = System.Drawing.Color.Black;
+            this.TrackerLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TrackerLbl.Location = new System.Drawing.Point(69, 557);
+            this.TrackerLbl.Name = "TrackerLbl";
+            this.TrackerLbl.Size = new System.Drawing.Size(107, 24);
+            this.TrackerLbl.TabIndex = 74;
+            this.TrackerLbl.Text = "Attendence";
+            this.TrackerLbl.Click += new System.EventHandler(this.TrackerLbl_Click);
             // 
             // LogOut
             // 
@@ -465,64 +491,38 @@
             // 
             // MShipList
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.LimeGreen;
-            this.MShipList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.LimeGreen;
+            this.MShipList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.MShipList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.MShipList.BackgroundColor = System.Drawing.Color.SeaShell;
             this.MShipList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MShipList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MShipList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.MShipList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MShipList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MShipList.GridColor = System.Drawing.Color.Sienna;
             this.MShipList.Location = new System.Drawing.Point(0, 0);
             this.MShipList.Name = "MShipList";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.GreenYellow;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MShipList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MShipList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.MShipList.RowHeadersWidth = 51;
             this.MShipList.Size = new System.Drawing.Size(796, 323);
             this.MShipList.TabIndex = 1;
             this.MShipList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MShipList_CellContentClick);
-            // 
-            // TrackerLbl
-            // 
-            this.TrackerLbl.AutoSize = true;
-            this.TrackerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
-            this.TrackerLbl.ForeColor = System.Drawing.Color.Black;
-            this.TrackerLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TrackerLbl.Location = new System.Drawing.Point(69, 557);
-            this.TrackerLbl.Name = "TrackerLbl";
-            this.TrackerLbl.Size = new System.Drawing.Size(107, 24);
-            this.TrackerLbl.TabIndex = 74;
-            this.TrackerLbl.Text = "Attendence";
-            this.TrackerLbl.Click += new System.EventHandler(this.TrackerLbl_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackgroundImage = global::Dashboard.Properties.Resources.pic_1;
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox7.Location = new System.Drawing.Point(17, 543);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(46, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 75;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // Memberships
             // 
@@ -538,6 +538,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -547,7 +548,6 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MShipList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
