@@ -44,6 +44,8 @@ namespace Dashboard
         private void SaveBtn_Click(object sender, EventArgs e)
         {
 
+           
+
             try
             {
                 if (ChNameTb.Text == "" || PhoneTb.Text == "" ||
@@ -62,27 +64,29 @@ namespace Dashboard
                 string Password = PassTb.Text;
                 string dob = DOBTb.Value.ToString("yyyy-MM-dd");
 
-               
-                string QueryCoach = @"INSERT INTO CoachsTbl
-                              (CName, CGen, CDOB, CPhone, CExperience, CAddress)
-                                VALUES ('{0}','{1}','{2}','{3}',{4},'{5}')";
+              
+                string QueryUser = $@"
+            INSERT INTO UserTbl (Username, Password, Role) 
+            OUTPUT INSERTED.UserId
+            VALUES ('{CName}', '{Password}', 'Coach')";
 
-                QueryCoach = string.Format(QueryCoach, CName, Gender, dob, Phone, experience, Add);
+                DataTable dtUser = Con.GetData(QueryUser);
+
+                if (dtUser.Rows.Count == 0 || dtUser.Rows[0]["UserId"] == DBNull.Value)
+                {
+                    MessageBox.Show("Error creating User account.");
+                    return;
+                }
+
+                int userId = Convert.ToInt32(dtUser.Rows[0]["UserId"]);
+
+             
+                string QueryCoach = $@"
+            INSERT INTO CoachsTbl (CName, CGen, CDOB, CPhone, CExperience, CAddress, UserId)
+            VALUES ('{CName}', '{Gender}', '{dob}', '{Phone}', {experience}, '{Add}', {userId})";
+
                 Con.setData(QueryCoach);
 
-                
-                DataTable dt = Con.GetData("SELECT MAX(CId) AS LastId FROM CoachsTbl");
-                int CoachId = Convert.ToInt32(dt.Rows[0]["LastId"]);
-
-                
-                string QueryUser = @"INSERT INTO UserTbl
-                         (Username, Password, Role, StaffId)
-                            VALUES ('{0}','{1}','Coach',{2})";
-
-                QueryUser = string.Format(QueryUser, CName, Password, CoachId);
-                Con.setData(QueryUser);
-
-               
                 ShowCoach();
                 ClearFields();
                 MessageBox.Show("Coach Added Successfully");
@@ -91,6 +95,7 @@ namespace Dashboard
             {
                 MessageBox.Show(ex.Message);
             }
+
 
         }
 
@@ -102,15 +107,11 @@ namespace Dashboard
         int key = 0;
         private void CoachList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
 
-            if (e.RowIndex < 0 || CoachList.Rows[e.RowIndex].IsNewRow)
-                return;
+            if (e.RowIndex < 0 || CoachList.Rows[e.RowIndex].IsNewRow) return;
 
-           
             key = Convert.ToInt32(CoachList.Rows[e.RowIndex].Cells["CId"].Value);
 
-           
             ChNameTb.Text = CoachList.Rows[e.RowIndex].Cells["CName"].Value.ToString();
             GenCb.SelectedItem = CoachList.Rows[e.RowIndex].Cells["CGen"].Value.ToString();
             DOBTb.Value = Convert.ToDateTime(CoachList.Rows[e.RowIndex].Cells["CDOB"].Value);
@@ -118,15 +119,12 @@ namespace Dashboard
             ExpTb.Text = CoachList.Rows[e.RowIndex].Cells["CExperience"].Value.ToString();
             AddTb.Text = CoachList.Rows[e.RowIndex].Cells["CAddress"].Value.ToString();
 
-            
-            DataTable dtUser = Con.GetData(
-                $"SELECT Password FROM UserTbl WHERE StaffId={key} AND Role='Coach'"
-            );
-
+            DataTable dtUser = Con.GetData($"SELECT Password FROM UserTbl WHERE UserId = (SELECT UserId FROM CoachsTbl WHERE CId={key})");
             if (dtUser.Rows.Count > 0)
                 PassTb.Text = dtUser.Rows[0]["Password"].ToString();
             else
                 PassTb.Clear();
+
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
@@ -140,22 +138,22 @@ namespace Dashboard
                     return;
                 }
 
-               
-                DataTable dt = Con.GetData($"SELECT COUNT(*) AS Count FROM MembersTbl WHERE MCoach = {key}");
-                int memberCount = Convert.ToInt32(dt.Rows[0]["Count"]);
-
-                if (memberCount > 0)
+             
+                DataTable dtUser = Con.GetData($"SELECT UserId FROM CoachsTbl WHERE CId={key}");
+                if (dtUser.Rows.Count == 0)
                 {
-                    MessageBox.Show("Cannot delete this coach. Some members are assigned to this coach. Reassign or delete the members first.");
+                    MessageBox.Show("Coach not found!");
                     return;
                 }
+                int userId = Convert.ToInt32(dtUser.Rows[0]["UserId"]);
 
-                
+           
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this coach?",
                                                       "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    string Query = $"DELETE FROM CoachsTbl WHERE CId = {key}";
+                   
+                    string Query = $"DELETE FROM UserTbl WHERE UserId={userId}";
                     Con.setData(Query);
 
                     ShowCoach();
@@ -181,43 +179,44 @@ namespace Dashboard
                 if (ChNameTb.Text == "" || PhoneTb.Text == "" || ExpTb.Text == "" || PassTb.Text == "" || AddTb.Text == "" || GenCb.SelectedIndex == -1)
                 {
                     MessageBox.Show("Missing Information");
-
+                    return;
                 }
-                else
+
+                string CName = ChNameTb.Text;
+                string Gender = GenCb.SelectedItem.ToString();
+                string Phone = PhoneTb.Text;
+                int experience = Convert.ToInt32(ExpTb.Text);
+                string Add = AddTb.Text;
+                string Password = PassTb.Text;
+                string dob = DOBTb.Value.ToString("yyyy-MM-dd");
+
+               
+                DataTable dtUser = Con.GetData($"SELECT UserId FROM CoachsTbl WHERE CId={key}");
+                if (dtUser.Rows.Count == 0)
                 {
-                    string CName = ChNameTb.Text;
-                    string Gender = GenCb.SelectedItem.ToString();
-                    string Phone = PhoneTb.Text;
-                    int experience = Convert.ToInt32(ExpTb.Text);
-                    string Add = AddTb.Text;
-                    string Password = PassTb.Text;
-                   
-
-                   
-                    string QueryCoach = "UPDATE CoachsTbl SET CName='{0}', CGen='{1}', CDOB='{2}', CPhone='{3}', CExperience={4}, CAddress='{5}' WHERE CId={6}";
-                    QueryCoach = string.Format(QueryCoach, CName, Gender, DOBTb.Value.ToString("yyyy-MM-dd"), Phone, experience, Add, key);
-                    Con.setData(QueryCoach);
-
-                    string QueryUser = "UPDATE UserTbl SET Username='{0}', Password='{1}' WHERE StaffId={2} AND Role='Coach'";
-                    QueryUser = string.Format(QueryUser, CName, Password, key);
-                    Con.setData(QueryUser);
-
-
-                    ShowCoach();
-                    MessageBox.Show("Coach Updated Successfully");
-                    ShowTempMessage("Coach Updated!!");
-                    ClearFields();
-
+                    MessageBox.Show("Coach not found!");
+                    return;
                 }
+                int userId = Convert.ToInt32(dtUser.Rows[0]["UserId"]);
 
+             
+                string QueryCoach = $"UPDATE CoachsTbl SET CName='{CName}', CGen='{Gender}', CDOB='{dob}', CPhone='{Phone}', CExperience={experience}, CAddress='{Add}' WHERE CId={key}";
+                Con.setData(QueryCoach);
+
+                string QueryUser = $"UPDATE UserTbl SET Username='{CName}', Password='{Password}' WHERE UserId={userId}";
+                Con.setData(QueryUser);
+
+                ShowCoach();
+                ClearFields();
+                MessageBox.Show("Coach Updated Successfully");
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(Ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
 
-     
+
         }
 
         private void ClearFields()
