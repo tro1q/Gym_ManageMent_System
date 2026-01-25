@@ -31,90 +31,7 @@ namespace Dashboard
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            //  if (UNameTb.Text == "" || PasswordTb.Text == "")
-            //  {
-            //      MessageBox.Show("Missing Information!!");
-            //  }
-            //  else
-            //  {
-            //      try
-            //      {
-            //          string Query = "";
-
-
-            //          if (RecepRb.Checked)
-            //          {
-
-            //              //  Query = @"SELECT * FROM ReceptionistTbl WHERE RecepName = '{0}' COLLATE Latin1_General_CS_AS AND RecepPass = '{1}' COLLATE Latin1_General_CS_AS";
-
-            //              Query = @"SELECT * FROM UserTbl 
-            //WHERE Username='{0}' AND Password='{1}' AND Role='Coach'";
-
-
-
-
-
-            //              Query = string.Format(Query, UNameTb.Text, PasswordTb.Text);
-
-            //              DataTable dt = Con.GetData(Query);
-
-
-
-            //              if (dt.Rows.Count == 0)
-            //              {
-            //                  MessageBox.Show("Invalid Receptionist!!");
-            //              }
-            //              else
-            //              {
-            //                  Login.UserId = Convert.ToInt32(dt.Rows[0]["UserId"]);
-            //                  Login.UserRole = dt.Rows[0]["Role"].ToString();
-            //                 // UserRole = "Receptionist";
-            //                  Members obj = new Members();
-            //                  obj.Show();
-            //                  this.Hide();
-            //              }
-            //          }
-
-
-            //          else if (CoachRb.Checked)
-            //          {
-            //              //Query = @"SELECT * FROM CoachsTbl  WHERE CName = '{0}' COLLATE Latin1_General_CS_AS AND CPass = '{1}' COLLATE Latin1_General_CS_AS";
-            //              //Query = string.Format(Query, UNameTb.Text, PasswordTb.Text);
-
-            //              Query = @"SELECT * FROM UserTbl WHERE Username = '{0}' AND Password = '{1}' AND Role='Coach'";
-            //              Query = string.Format(Query, UNameTb.Text, PasswordTb.Text);
-
-            //              DataTable dt = Con.GetData(Query);
-
-            //              if (dt.Rows.Count == 0)
-            //              {
-            //                  MessageBox.Show("Invalid Coach!!");
-            //              }
-            //              else
-            //              {
-            //                  // UserId = Convert.ToInt32(dt.Rows[0]["CId"]);
-            //                  //UserRole = "Coach";
-
-            //                  Login.UserId = Convert.ToInt32(dt.Rows[0]["UserId"]);
-            //                  Login.UserRole = dt.Rows[0]["Role"].ToString();
-
-
-            //                  Members obj = new Members();
-            //                  obj.Show();
-            //                  this.Hide();
-            //              }
-            //          }
-
-            //          else
-            //          {
-            //              MessageBox.Show("Please select a login role");
-            //          }
-            //      }
-            //      catch (Exception Ex)
-            //      {
-            //          MessageBox.Show(Ex.Message);
-            //      }
-            //  }
+           
 
 
             if (UNameTb.Text == "" || PasswordTb.Text == "")
@@ -154,7 +71,7 @@ namespace Dashboard
                     Login.UserId = Convert.ToInt32(dt.Rows[0]["UserId"]);
                     Login.UserRole = dt.Rows[0]["Role"].ToString();
 
-                    Members obj = new Members();   // or role-based form
+                    Members obj = new Members();  
                     obj.Show();
                     this.Hide();
                 }
@@ -176,10 +93,8 @@ namespace Dashboard
 
             try
             {
-                //string Query = "SELECT * FROM AdminTbl  WHERE AdminName = '{0}' COLLATE Latin1_General_CS_AS AND AdminPass = '{1}' COLLATE Latin1_General_CS_AS";
-
-              string  Query = @"SELECT * FROM UserTbl 
-          WHERE Username='{0}' AND Password='{1}' AND Role='Admin'";
+                
+              string  Query = @"SELECT * FROM UserTbl  WHERE Username='{0}' AND Password='{1}' AND Role='Admin'";
 
 
                 Query = string.Format(Query, UNameTb.Text, PasswordTb.Text);
@@ -192,8 +107,7 @@ namespace Dashboard
                     return;
                 }
 
-                //Login.UserId = Convert.ToInt32(dt.Rows[0]["AdminId"]);
-                //Login.UserRole = "Admin";
+               
 
                 Login.UserId = Convert.ToInt32(dt.Rows[0]["UserId"]);
                 Login.UserRole = "Admin";
