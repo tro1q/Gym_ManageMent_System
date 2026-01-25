@@ -43,12 +43,18 @@ namespace Dashboard
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
                 if (RecepNameTb.Text == "" || RecepAddTb.Text == "" || PhoneTb.Text == "" || GenCb.SelectedIndex == -1 || PasswordTb.Text == "")
                 {
                     MessageBox.Show("Missing Information");
+                    return;
+                }
+
+                if (key == 0)
+                {
+                    MessageBox.Show("Select a receptionist to edit!");
                     return;
                 }
 
@@ -59,23 +65,21 @@ namespace Dashboard
                 string Password = PasswordTb.Text;
                 string dob = RecepDOBTb.Value.ToString("yyyy-MM-dd");
 
-              
-                string Query1 = @"INSERT INTO ReceptionistTbl (RecepName, RecepGen, RecepDOB, RecepAdd, RecepPhone)
-                                        VALUES ('{0}','{1}','{2}','{3}','{4}')";
-                  Query1 = string.Format(Query1, RName, Gender, dob, Add, Phone);
-                   Con.setData(Query1);
+               
+                string Query1 = @"UPDATE ReceptionistTbl 
+                          SET RecepName='{0}', RecepGen='{1}', RecepDOB='{2}', RecepAdd='{3}', RecepPhone='{4}' 
+                          WHERE ReceptId={5}";
+                Query1 = string.Format(Query1, RName, Gender, dob, Add, Phone, key);
+                Con.setData(Query1);
 
+                
+                string Query2 = @"UPDATE UserTbl 
+                          SET Username='{0}', Password='{1}' 
+                          WHERE StaffId={2} AND Role='Receptionist'";
+                Query2 = string.Format(Query2, RName, Password, key);
+                Con.setData(Query2);
 
-                 DataTable dt = Con.GetData("SELECT TOP 1 ReceptId FROM ReceptionistTbl ORDER BY ReceptId DESC");
-                 int staffId = Convert.ToInt32(dt.Rows[0]["ReceptId"]);
-
-
-                 string Query2 = @"INSERT INTO UserTbl (Username, Password, Role, StaffId) VALUES ('{0}','{1}','Receptionist',{2})";
-                  Query2 = string.Format(Query2, RName, Password, staffId);
-                   Con.setData(Query2);
-
-
-
+               
                 ShowReceptionist();
                 MessageBox.Show("Receptionist Updated Successfully!");
                 ClearFields();
