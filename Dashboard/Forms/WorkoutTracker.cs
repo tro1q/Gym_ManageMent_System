@@ -57,8 +57,7 @@ namespace Dashboard.Forms
             int duration = Convert.ToInt32(dt.Rows[0][0]);
 
             
-            string query = $@"
-        INSERT INTO TrackerTbl (MemberId, StartTime, Status, Duration)
+            string query = $@"INSERT INTO TrackerTbl (MemberId, StartTime, Status, Duration)
         VALUES ({memberId}, '{DateTime.Now}', 'Active', {duration})";
 
             Con.setData(query);

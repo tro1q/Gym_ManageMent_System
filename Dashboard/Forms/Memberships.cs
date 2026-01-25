@@ -102,29 +102,49 @@ namespace Dashboard
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
+          
             try
             {
                 if (key == 0)
                 {
-                    MessageBox.Show("Select a MemberShip!!");
-
+                    MessageBox.Show("Select a Membership!");
+                    return;
                 }
-                else
+
+               
+                string checkQuery = "SELECT COUNT(*) FROM MembersTbl WHERE MMembership = {0}";
+                checkQuery = string.Format(checkQuery, key);
+                DataTable dt = Con.GetData(checkQuery);
+
+                if (Convert.ToInt32(dt.Rows[0][0]) > 0)
                 {
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete this MemberShip?",
-                                          "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
-                    {
-                       
-                        string Query = "delete from MembershipsTbl where MShipid = {0}";
-                        Query = string.Format(Query, key);
-                        Con.setData(Query);
-                       ShowMShips();
-                       ShowTempMessage(" MemberShip Deleted !");
-                        ClearField();
-                    }
+                    MessageBox.Show(
+                        "Cannot delete this membership.\nMembers are currently assigned to it.",
+                        "Change Membership",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
                 }
 
+                
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to delete this membership?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    string Query = "DELETE FROM MembershipsTbl WHERE MShipId = {0}";
+                    Query = string.Format(Query, key);
+                    Con.setData(Query);
+
+                    ShowMShips();
+                    ClearField();
+                    ShowTempMessage("Membership Deleted Successfully!");
+                }
             }
             catch (Exception Ex)
             {
@@ -152,7 +172,7 @@ namespace Dashboard
                     Query = string.Format(Query, MName, Duration, Goal, Cost,key);
                     Con.setData(Query);
                     ShowMShips();
-                   // MessageBox.Show("MemberShip Updated!!");
+                  
                    ShowTempMessage("MemberShip Updated Successfully!");
 
                     ClearField();

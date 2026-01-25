@@ -259,7 +259,7 @@ namespace Dashboard
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete this Receptionist?",
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this Member?",
                                           "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
