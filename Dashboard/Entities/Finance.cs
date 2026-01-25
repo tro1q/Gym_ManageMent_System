@@ -9,12 +9,13 @@ namespace Dashboard.Entities
     internal class Finance
     {
 
-        public int BillId { get; set; }
-        public int Agent { get; set; }
-        public int Member { get; set; }
-        public string BPeriod { get; set; }
-        public DateTime BDate { get; set; }
-        public int BAmount { get; set; }
+        public int FinanceId { get; set; }    
+        public int MemberId { get; set; }     
+        public int AgentId { get; set; }      
+        public decimal Amount { get; set; }    
+        public DateTime PaymentDate { get; set; } 
+        public string PaymentMethod { get; set; }
+        public Finance() { }
 
     }
 }
