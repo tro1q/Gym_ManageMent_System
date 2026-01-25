@@ -52,12 +52,6 @@ namespace Dashboard
                     return;
                 }
 
-                if (key == 0)
-                {
-                    MessageBox.Show("Select a receptionist to edit!");
-                    return;
-                }
-
                 string RName = RecepNameTb.Text;
                 string Gender = GenCb.SelectedItem.ToString();
                 string Phone = PhoneTb.Text;
@@ -66,20 +60,13 @@ namespace Dashboard
                 string dob = RecepDOBTb.Value.ToString("yyyy-MM-dd");
 
                
-                string Query1 = @"UPDATE ReceptionistTbl 
-                          SET RecepName='{0}', RecepGen='{1}', RecepDOB='{2}', RecepAdd='{3}', RecepPhone='{4}' 
-                          WHERE ReceptId={5}";
-                Query1 = string.Format(Query1, RName, Gender, dob, Add, Phone, key);
+                string Query1 = $"UPDATE ReceptionistTbl SET RecepName='{RName}', RecepGen='{Gender}', RecepDOB='{dob}', RecepAdd='{Add}', RecepPhone='{Phone}' WHERE ReceptId={key}";
                 Con.setData(Query1);
 
-                
-                string Query2 = @"UPDATE UserTbl 
-                          SET Username='{0}', Password='{1}' 
-                          WHERE StaffId={2} AND Role='Receptionist'";
-                Query2 = string.Format(Query2, RName, Password, key);
+            
+                string Query2 = $"UPDATE UserTbl SET Username='{RName}', Password='{Password}' WHERE StaffId={key} AND Role='Receptionist'";
                 Con.setData(Query2);
 
-               
                 ShowReceptionist();
                 MessageBox.Show("Receptionist Updated Successfully!");
                 ClearFields();
