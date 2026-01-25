@@ -55,13 +55,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataCon\DataconFun.cs" />
-    <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\Coachs.cs" />
     <Compile Include="Entities\Finance.cs" />
     <Compile Include="Entities\Member.cs" />
     <Compile Include="Entities\MemberShip.cs" />
     <Compile Include="Entities\Receptionists.cs" />
     <Compile Include="Entities\Tracker.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Forms\Bill.cs">
       <SubType>Form</SubType>
     </Compile>
