@@ -1,6 +1,11 @@
 ﻿/* =========================================
    Gym Management System - Database Script
    ========================================= */
+CREATE DATABASE GymDB;
+GO
+
+USE GymDB;
+GO
 
 -- =========================
 -- 1. Receptionist Table
